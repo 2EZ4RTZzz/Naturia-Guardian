@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     public float speed, jumpforce;
     //LayerMask 指的是图层，告诉系统那个图层是真正的地面.
     public LayerMask ground;
-
     public Transform CellingCheck;
     
     //记录樱桃

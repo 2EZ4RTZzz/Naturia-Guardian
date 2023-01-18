@@ -14,10 +14,13 @@ public class PlayerController : MonoBehaviour
     //LayerMask 指的是图层，告诉系统那个图层是真正的地面.
     public LayerMask ground;
     public Transform CellingCheck;
-    
+
     //记录樱桃
     public Text CherryNum;
 
+    //判断伤害
+    
+    private bool isHurt;  //默认是False
 
     //记录吃了多少樱桃
     public int Cherry = 0;
@@ -30,7 +33,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()   //自适应变化帧数 ， 根据不同电脑 ，有的电脑卡 自动会掉帧 所以要fix叼
     {
-        Movement();
+        //!isHurt 反而是true 当受到伤害 不执行Movement
+        if(!isHurt){
+            Movement();
+        }
         SwitchAnim();
 
     }
@@ -60,6 +66,7 @@ public class PlayerController : MonoBehaviour
         }
 
         Crouch();
+
     }
     //切换动画
     void SwitchAnim()
@@ -76,6 +83,13 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("falling", true);
             }
         }
+        else if (isHurt)
+        {
+            if(Mathf.Abs(rb.velocity.x)<0.1f)
+            {
+                isHurt = false;
+            }
+        }
         //如果玩家下降碰到地面，那么下落为false ， 回归正常ldle ， 但是要确保如果下落一次 就会一直保持一样 ， 所以在一开始LINE56 要给个trigger值 去control it back
         else if (coll.IsTouchingLayers(ground))
         {
@@ -90,11 +104,12 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "Collection")
         {
             Destroy(collision.gameObject);
-            Cherry+=1;
+            Cherry += 1;
             //把int 变string 用ToString();
-            CherryNum.text = Cherry.ToString() ;
+            CherryNum.text = Cherry.ToString();
         }
     }
+
     // 下蹲 crouching 
     void Crouch()
     {
@@ -114,4 +129,40 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+
+
+    //kill enemeies
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        //match the tag
+        if (other.gameObject.tag == "Enemy")
+        {
+            //check if is falling
+            if (anim.GetBool("falling"))
+            {
+                Destroy(other.gameObject);
+                rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+                anim.SetBool("jumping", true);
+            }
+            //if not falling on the head of the enemy
+            //fox on the left side of frog
+            else if(transform.position.x < other.gameObject.transform.position.x)
+            {
+                rb.velocity = new Vector2(-5,rb.velocity.y);
+                isHurt= true;
+            }
+            //fox on the right side of the frog
+            //get Object , transform position and check X not y!
+                else if(transform.position.x > other.gameObject.transform.position.x)
+            {
+                rb.velocity = new Vector2(5,rb.velocity.y);
+                isHurt= true;
+            }
+
+        }
+    }
+
+
+
 }

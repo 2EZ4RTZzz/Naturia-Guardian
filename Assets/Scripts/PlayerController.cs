@@ -25,10 +25,16 @@ public class PlayerController : MonoBehaviour
     //记录吃了多少樱桃
     public int Cherry = 0;
 
+    int time;
+    //后退速度
+    float backSpeed;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        time = 30;
+        backSpeed = 5;
     }
 
     void Update()   //自适应变化帧数 ， 根据不同电脑 ，有的电脑卡 自动会掉帧 所以要fix叼
@@ -85,9 +91,27 @@ public class PlayerController : MonoBehaviour
         }
         else if (isHurt)
         {
-            if(Mathf.Abs(rb.velocity.x)<0.1f)
+            //time--;
+            //if (Mathf.Abs(rb.velocity.x) < 0.1f)
+            //{
+            //    isHurt = false;
+            //}
+            //else if (time > 0)
+            //{
+            //    time--;
+            //}
+            //else if (time <= 0)
+            //{
+            //    isHurt = false;
+            //    time = 30;
+            //}
+
+            backSpeed -= 0.05f;
+            if (backSpeed <= 0)
             {
+                Debug.Log("is hurt");
                 isHurt = false;
+                backSpeed = 5;
             }
         }
         //如果玩家下降碰到地面，那么下落为false ， 回归正常ldle ， 但是要确保如果下落一次 就会一直保持一样 ， 所以在一开始LINE56 要给个trigger值 去control it back
@@ -147,17 +171,18 @@ public class PlayerController : MonoBehaviour
             }
             //if not falling on the head of the enemy
             //fox on the left side of frog
-            else if(transform.position.x < other.gameObject.transform.position.x)
+            else if (transform.position.x < other.gameObject.transform.position.x)
             {
-                rb.velocity = new Vector2(-5,rb.velocity.y);
-                isHurt= true;
+                rb.velocity = new Vector2(-backSpeed, rb.velocity.y);
+                isHurt = true;
+                
             }
             //fox on the right side of the frog
             //get Object , transform position and check X not y!
-                else if(transform.position.x > other.gameObject.transform.position.x)
+            else if (transform.position.x > other.gameObject.transform.position.x)
             {
-                rb.velocity = new Vector2(5,rb.velocity.y);
-                isHurt= true;
+                rb.velocity = new Vector2(backSpeed, rb.velocity.y);
+                isHurt = true;
             }
 
         }

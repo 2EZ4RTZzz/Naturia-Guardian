@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     //记录吃了多少樱桃
     public int Cherry = 0;
 
-    int time;
+    //int time;
     //后退速度
     float backSpeed;
 
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        time = 30;
+        //time = 30;
         backSpeed = 5;
     }
 
@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
             backSpeed -= 0.05f;
             if (backSpeed <= 0)
             {
-                Debug.Log("is hurt");
+                //Debug.Log("is hurt");
                 isHurt = false;
                 backSpeed = 5;
             }

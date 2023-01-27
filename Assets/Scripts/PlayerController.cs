@@ -19,28 +19,27 @@ public class PlayerController : MonoBehaviour
     public Text CherryNum;
 
     //判断伤害
-    
+
     private bool isHurt;  //默认是False
 
     //记录吃了多少樱桃
     public int Cherry = 0;
 
-    //int time;
     //后退速度
-    float backSpeed;
+    private float backSpeed=5;
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        //time = 30;
-        backSpeed = 5;
     }
 
     void Update()   //自适应变化帧数 ， 根据不同电脑 ，有的电脑卡 自动会掉帧 所以要fix叼
     {
         //!isHurt 反而是true 当受到伤害 不执行Movement
-        if(!isHurt){
+        if (!isHurt)
+        {
             Movement();
         }
         SwitchAnim();
@@ -65,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
         //跳跃   
         //1-11 remove super jumps !!!  同时执行的时候才算
-        if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
+        if (Input.GetButtonDown("Jump") && DisColl.IsTouchingLayers(ground))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpforce);
             anim.SetBool("jumping", true);
@@ -91,21 +90,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (isHurt)
         {
-            //time--;
-            //if (Mathf.Abs(rb.velocity.x) < 0.1f)
-            //{
-            //    isHurt = false;
-            //}
-            //else if (time > 0)
-            //{
-            //    time--;
-            //}
-            //else if (time <= 0)
-            //{
-            //    isHurt = false;
-            //    time = 30;
-            //}
-
+            //decrease the hurt backSpeed
             backSpeed -= 0.05f;
             if (backSpeed <= 0)
             {
@@ -113,9 +98,10 @@ public class PlayerController : MonoBehaviour
                 isHurt = false;
                 backSpeed = 5;
             }
+
         }
         //如果玩家下降碰到地面，那么下落为false ， 回归正常ldle ， 但是要确保如果下落一次 就会一直保持一样 ， 所以在一开始LINE56 要给个trigger值 去control it back
-        else if (coll.IsTouchingLayers(ground))
+        else if (DisColl.IsTouchingLayers(ground))
         {
             anim.SetBool("falling", false);
             anim.SetBool("ldle", true);
@@ -144,14 +130,15 @@ public class PlayerController : MonoBehaviour
             {
                 anim.SetBool("crouching", true);
                 DisColl.enabled = false;
+                coll.enabled=true;
             }
             else if (Input.GetButtonUp("Crouch"))
             {
                 anim.SetBool("crouching", false);
+                coll.enabled=false;
                 DisColl.enabled = true;
             }
         }
-
     }
 
 
@@ -173,18 +160,16 @@ public class PlayerController : MonoBehaviour
             //fox on the left side of frog
             else if (transform.position.x < other.gameObject.transform.position.x)
             {
-                rb.velocity = new Vector2(-backSpeed, rb.velocity.y);
+                rb.velocity = new Vector2(-5, rb.velocity.y);
                 isHurt = true;
-                
             }
             //fox on the right side of the frog
             //get Object , transform position and check X not y!
             else if (transform.position.x > other.gameObject.transform.position.x)
             {
-                rb.velocity = new Vector2(backSpeed, rb.velocity.y);
+                rb.velocity = new Vector2(5, rb.velocity.y);
                 isHurt = true;
             }
-
         }
     }
 

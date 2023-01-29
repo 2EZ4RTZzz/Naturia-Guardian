@@ -86,12 +86,12 @@ public class Enemy_Frog : MonoBehaviour
             {
                 rb.velocity = new Vector2(Speed,jumpForce);
             }
-            // if(Coll.IsTouchingLayers(Ground))
-            // {
-            //     anim.SetBool("jumping",true);
-            //     rb.velocity = new Vector2(Speed, jumpForce);
-                
-            // }
+            if (Coll.IsTouchingLayers(Ground))
+            {
+                anim.SetBool("jumping", true);
+                //rb.velocity = new Vector2(Speed, jumpForce);
+
+            }
 
             // if (transform.position.x > rightx)
             // {
@@ -107,14 +107,16 @@ public class Enemy_Frog : MonoBehaviour
     void SwitchAnim(){
         if(anim.GetBool("jumping"))
         {
-            if(rb.velocity.y <0.1)
+            if(rb.velocity.y <= 0)
             {
                 anim.SetBool("jumping",false);
                 anim.SetBool("falling",true);
+                //Debug.Log(Coll.IsTouchingLayers(Ground));
             }
         }
         if(Coll.IsTouchingLayers(Ground) && anim.GetBool("falling")){
-            anim.SetBool("falling",false);
+            anim.SetBool("falling", false);
+            Debug.Log("landing");
         }
     }
 }

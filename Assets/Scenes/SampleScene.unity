@@ -6984,7 +6984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &603967144
 Transform:
   m_ObjectHideFlags: 0
@@ -7016,7 +7016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Ground:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   leftpoint: {fileID: 2023563840}
   rightpoint: {fileID: 1658272952}
   Speed: 5
@@ -8348,6 +8348,10 @@ PrefabInstance:
     - target: {fileID: 4586900973255902493, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
       propertyPath: m_Name
       value: Frog (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586900973255902493, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
@@ -15118,6 +15122,10 @@ PrefabInstance:
     - target: {fileID: 4586900973255902493, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
       propertyPath: m_Name
       value: Frog
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586900973255902493, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}

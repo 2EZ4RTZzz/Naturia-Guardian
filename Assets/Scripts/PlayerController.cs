@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
     void SwitchAnim()
     {
         //无论如何都会执行 因为这是一开始的基础移动 ， 也只有在将落地的时候 重新切换为true
-        anim.SetBool("ldle", false);
+        anim.SetBool("idle", false);
 
         //if the player is falling down and also not touching the ground , then is falling animtion
         if(rb.velocity.y < 0.1f && !coll.IsTouchingLayers(ground))
@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
         else if (DisColl.IsTouchingLayers(ground))
         {
             anim.SetBool("falling", false);
-            anim.SetBool("ldle", true);
+            anim.SetBool("idle", true);
         }
     }
 

@@ -78,6 +78,12 @@ public class PlayerController : MonoBehaviour
     {
         //无论如何都会执行 因为这是一开始的基础移动 ， 也只有在将落地的时候 重新切换为true
         anim.SetBool("ldle", false);
+
+        //if the player is falling down and also not touching the ground , then is falling animtion
+        if(rb.velocity.y < 0.1f && !coll.IsTouchingLayers(ground))
+        {
+            anim.SetBool("falling",true);
+        }
         //直接返回一个boolean 因为我设置的boolean variable!!!
         if (anim.GetBool("jumping"))
         {
@@ -92,11 +98,20 @@ public class PlayerController : MonoBehaviour
         {
             //decrease the hurt backSpeed
             backSpeed -= 0.05f;
+            anim.SetBool("hurt",true);
+            
             if (backSpeed <= 0)
             {
+                //after hurt animtor back to idle
+                //回到正常状态
+                anim.SetBool("hurt",false);
+                anim.SetBool("idle",true);
+
+
                 //Debug.Log("is hurt");
                 isHurt = false;
                 backSpeed = 5;
+
             }
 
         }

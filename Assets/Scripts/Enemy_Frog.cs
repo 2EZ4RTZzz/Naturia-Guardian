@@ -86,12 +86,14 @@ public class Enemy_Frog : MonoBehaviour
             {
                 rb.velocity = new Vector2(Speed,jumpForce);
             }
-            if (Coll.IsTouchingLayers(Ground))
-            {
-                anim.SetBool("jumping", true);
-                //rb.velocity = new Vector2(Speed, jumpForce);
 
-            }
+            anim.SetBool("jumping", true);
+            //if (Coll.IsTouchingLayers(Ground))
+            //{
+            //    anim.SetBool("jumping", true);
+            //    //rb.velocity = new Vector2(Speed, jumpForce);
+
+            //}
 
             // if (transform.position.x > rightx)
             // {

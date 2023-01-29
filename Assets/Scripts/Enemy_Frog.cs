@@ -53,13 +53,14 @@ public class Enemy_Frog : MonoBehaviour
         {
 
             //ensure the jumping time
-            if(Coll.IsTouchingLayers(Ground))
-            {   
-                //switch the animation to jump.
-                anim.SetBool("jumping",true);
-                // rb.velocity = new Vector2(-Speed, jumpForce);
-                
-            }
+            anim.SetBool("jumping", true);
+            //if(Coll.IsTouchingLayers(Ground))
+            //{   
+            //    //switch the animation to jump.
+            //    anim.SetBool("jumping",true);
+            //    // rb.velocity = new Vector2(-Speed, jumpForce);
+
+            //}
             //check if the frog's pos.x less than set left point's pos.x 
             if (transform.position.x < leftx)
             {

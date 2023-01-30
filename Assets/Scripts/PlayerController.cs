@@ -163,11 +163,15 @@ public class PlayerController : MonoBehaviour
     {
         //match the tag
         if (other.gameObject.tag == "Enemy")
-        {
+        {   
+            //get all the enemy_frog's functions / variables 
+            Enemy enemy = other.gameObject.GetComponent<Enemy>();
+            // Enemy_Frog frog = other.gameObject.GetComponent<Enemy_Frog>();
             //check if is falling
             if (anim.GetBool("falling"))
             {
-                Destroy(other.gameObject);
+                //take from the all enemy method.
+                enemy.JumpOn();
                 rb.velocity = new Vector2(rb.velocity.x, jumpforce);
                 anim.SetBool("jumping", true);
             }

@@ -7,7 +7,7 @@ AnimationClip:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: crouch
-  serializedVersion: 7
+  serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
   m_UseHighQualityCurve: 1
@@ -20,9 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 9878b6f1290ef41e88b30f08f68537fd, type: 3}
+      value: {fileID: 21300000, guid: 1902a76ce48bf9c41a82f38ce6e15bba, type: 3}
     - time: 0.1
-      value: {fileID: 21300000, guid: 448d57c5e4c694686badaba281a6adff, type: 3}
+      value: {fileID: 21300000, guid: ea0158ac8bb86aa40af5dc71f8b3e289, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,8 +42,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 9878b6f1290ef41e88b30f08f68537fd, type: 3}
-    - {fileID: 21300000, guid: 448d57c5e4c694686badaba281a6adff, type: 3}
+    - {fileID: 21300000, guid: 1902a76ce48bf9c41a82f38ce6e15bba, type: 3}
+    - {fileID: 21300000, guid: ea0158ac8bb86aa40af5dc71f8b3e289, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

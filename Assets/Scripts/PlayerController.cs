@@ -27,6 +27,12 @@ public class PlayerController : MonoBehaviour
 
     //后退速度
     private float backSpeed=5;
+
+    //jump sound
+    public AudioSource jumpAudio;
+
+    //pick up coins sound
+    public AudioSource pickUpAudio;
     
 
     void Start()
@@ -45,8 +51,9 @@ public class PlayerController : MonoBehaviour
         SwitchAnim();
 
     }
-
-    void Movement()
+    
+    //move
+    void Movement() 
     {
         float horizontalmove = Input.GetAxisRaw("Horizontal");  //get -1 , 0 , 1 if 1 right , -1 left
         //左右移动
@@ -67,6 +74,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump") && DisColl.IsTouchingLayers(ground))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpforce);
+            jumpAudio.Play();
             anim.SetBool("jumping", true);
         }
 
@@ -128,6 +136,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.tag == "Collection")
         {
+            pickUpAudio.Play();
             Destroy(collision.gameObject);
             Cherry += 1;
             //把int 变string 用ToString();

@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     //判断伤害
 
     private bool isHurt;  //默认是False
+    private bool isCrouching;
 
     //记录吃了多少樱桃
     public int Cherry = 0;
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        isCrouching = false;
     }
 
     void Update()   //自适应变化帧数 ， 根据不同电脑 ，有的电脑卡 自动会掉帧 所以要fix叼
@@ -55,10 +57,11 @@ public class PlayerController : MonoBehaviour
     //move
     void Movement() 
     {
+        Crouch();
         float horizontalmove = Input.GetAxisRaw("Horizontal");  //get -1 , 0 , 1 if 1 right , -1 left
         //左右移动
         rb.velocity = new Vector2(horizontalmove * speed, rb.velocity.y);
-        anim.SetFloat("running", Mathf.Abs(horizontalmove));
+        if (!isCrouching) anim.SetFloat("running", Mathf.Abs(horizontalmove));
         //Time.deltaTime 乘以物理时钟的百分比 ， 所以在运行中 会变得平滑不跳帧数
         //rb.velocity = new Vector2(horizontalmove*speed,rb.velocity.y);
 
@@ -78,7 +81,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("jumping", true);
         }
 
-        Crouch();
+        
 
     }
     //切换动画
@@ -148,20 +151,64 @@ public class PlayerController : MonoBehaviour
     void Crouch()
     {
         //顶头 ， 如果钻进去   ， 不能让他站立！
-        if (!Physics2D.OverlapCircle(CellingCheck.position, 0.2f, ground))
+        //if (!Physics2D.OverlapCircle(CellingCheck.position, 0.2f, ground))
+        //{
+            //Debug.Log("头上没有碰撞");
+
+
+            //if (Input.GetButtonDown("Crouch"))
+            //{
+            //    isChrouching = true;
+            //    anim.SetBool("crouching", true);
+            //    DisColl.enabled = false;
+            //    coll.enabled = true;
+            //}
+            //if (Input.GetButtonUp("Crouch"))
+            //{
+            //    if (!Physics2D.OverlapCircle(CellingCheck.position, 0.2f, ground)) {
+            //        anim.SetBool("crouching", false);
+            //        coll.enabled = false;
+            //        DisColl.enabled = true;
+            //    }
+                
+            //}
+
+            //if (Input.GetButtonDown("Crouch"))
+            //{
+            //    Debug.Log("not press down crouch");
+            //}
+        //}
+        //else
+        //{
+        //    if(!Input.GetButtonDown("Crouch"))
+        //    {
+        //        anim.SetBool("crouching", false);
+        //        coll.enabled = false;
+        //        DisColl.enabled = true;
+        //    }
+
+        //}
+
+        if (Input.GetButtonDown("Crouch"))
         {
-            if (Input.GetButtonDown("Crouch"))
-            {
-                anim.SetBool("crouching", true);
-                DisColl.enabled = false;
-                coll.enabled=true;
-            }
-            else if (Input.GetButtonUp("Crouch"))
-            {
-                anim.SetBool("crouching", false);
-                coll.enabled=false;
-                DisColl.enabled = true;
-            }
+            isCrouching = true;
+        }
+        if (Input.GetButtonUp("Crouch"))
+        {
+            isCrouching = false;
+        }
+
+        if (isCrouching)
+        {
+            anim.SetBool("crouching", true);
+            DisColl.enabled = false;
+            coll.enabled = true;
+        }
+        else if (!isCrouching && !Physics2D.OverlapCircle(CellingCheck.position, 0.2f, ground))
+        {
+            anim.SetBool("crouching", false);
+            coll.enabled = false;
+            DisColl.enabled = true;
         }
     }
 

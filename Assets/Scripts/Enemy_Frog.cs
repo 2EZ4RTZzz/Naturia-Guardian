@@ -119,13 +119,13 @@ public class Enemy_Frog : Enemy
             {
                 anim.SetBool("jumping", false);
                 anim.SetBool("falling", true);
-                //Debug.Log(Coll.IsTouchingLayers(Ground));
+                
             }
         }
         if (Coll.IsTouchingLayers(Ground) && anim.GetBool("falling"))
         {
             anim.SetBool("falling", false);
-            Debug.Log("landing");
+            
         }
     }
 }

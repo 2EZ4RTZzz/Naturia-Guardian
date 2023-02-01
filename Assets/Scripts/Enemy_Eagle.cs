@@ -102,7 +102,7 @@ public class Enemy_Eagle : Enemy
                         rb.rotation = facingAngle;
                         //skip the fight
                     }
-                    else if ((transform.position.x > target.position.x) && (transform.position.y > target.position.y))
+                    else if ((transform.position.x > target.position.x) && (transform.position.y < target.position.y))
                     {
                         rb.rotation = -facingAngle;
                     }

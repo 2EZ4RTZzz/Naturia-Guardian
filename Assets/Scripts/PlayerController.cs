@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
             Movement();
         }
         SwitchAnim();
-
+        attack_1();
     }
     
     //move
@@ -80,10 +80,18 @@ public class PlayerController : MonoBehaviour
             jumpAudio.Play();
             anim.SetBool("jumping", true);
         }
-
-        
-
     }
+
+    
+    void attack_1()
+    {
+        if(Input.GetButtonDown("Fire_Attack_1"))
+        {
+            anim.SetBool("attack_1",true);
+        }
+    }
+
+
     //切换动画
     void SwitchAnim()
     {
@@ -133,6 +141,8 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("idle", true);
         }
     }
+
+    
 
     //吃cherry！ 收集method
     private void OnTriggerEnter2D(Collider2D collision)

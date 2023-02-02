@@ -84,10 +84,15 @@ public class PlayerController : MonoBehaviour
 
     
     void attack_1()
-    {
-        if(Input.GetButtonDown("Fire_Attack_1"))
+    {   
+        //only can control by the keyboard.
+        if(Input.GetKeyDown(KeyCode.J))
         {
             anim.SetBool("attack_1",true);
+        }
+        else if(Input.GetKeyUp(KeyCode.J))
+        {
+            anim.SetBool("attack_1",false);
         }
     }
 

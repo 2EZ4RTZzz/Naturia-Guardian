@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e456d8068517424ca02b81c88dc9db3, type: 3}
+  m_Name: ItemDataList_SO
+  m_EditorClassIdentifier: 
+  itemDetialsList:
+  - itemID: 1000
+    name: TestMushroom
+    itemType: 0
+    itemIcon: {fileID: 21300000, guid: 6c7eac1744b6b4e10b3f1c98b84d5dbb, type: 3}
+    itemOnWorldSprite: {fileID: 21300000, guid: 4417e5e080315474c9cf62428e4551e8, type: 3}
+    itemDescription: mushroom for testing inventory system
+    itemUseRadius: 0
+    canPickUp: 1
+    canTrade: 1
+    canSynthesize: 1
+    canActivate: 0
+  - itemID: 0
+    name: 
+    itemType: 0
+    itemIcon: {fileID: 0}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: 
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 0
+  - itemID: 0
+    name: 
+    itemType: 0
+    itemIcon: {fileID: 0}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: 
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 0
+  - itemID: 0
+    name: 
+    itemType: 0
+    itemIcon: {fileID: 0}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: 
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 0
+  - itemID: 0
+    name: 
+    itemType: 0
+    itemIcon: {fileID: 0}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: 
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 0
+  - itemID: 0
+    name: 
+    itemType: 0
+    itemIcon: {fileID: 0}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: 
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 0
+  - itemID: 0
+    name: 
+    itemType: 0
+    itemIcon: {fileID: 0}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: 
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 0
+  - itemID: 0
+    name: 
+    itemType: 0
+    itemIcon: {fileID: 0}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: 
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 0
+  - itemID: 0
+    name: 
+    itemType: 0
+    itemIcon: {fileID: 0}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: 
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 0
+  - itemID: 0
+    name: 
+    itemType: 0
+    itemIcon: {fileID: 0}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: 
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 0

@@ -68,7 +68,6 @@ public class Enemy_Eagle : Enemy
             }
         }
     }
-
     void checkPlayerLocation()
     {
         if (Mathf.Abs(target.transform.position.x - transform.position.x) <= 15)

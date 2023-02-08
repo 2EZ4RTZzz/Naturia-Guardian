@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemy_Frog : Enemy
 {
 
-
     private Rigidbody2D rb;
     // private Animator anim;
     private Collider2D Coll;
@@ -43,27 +42,23 @@ public class Enemy_Frog : Enemy
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         // Animation event (Add the movement)
         // Movement();
         SwitchAnim();
+        base.update();
+
     }
+
+    //enemy get hurt from player.
 
     void Movement()
     {
         if (Faceleft)
         {
-
             //ensure the jumping time
             anim.SetBool("jumping", true);
-            //if(Coll.IsTouchingLayers(Ground))
-            //{   
-            //    //switch the animation to jump.
-            //    anim.SetBool("jumping",true);
-            //    // rb.velocity = new Vector2(-Speed, jumpForce);
-
-            //}
             //check if the frog's pos.x less than set left point's pos.x 
             if (transform.position.x < leftx)
             {
@@ -76,7 +71,6 @@ public class Enemy_Frog : Enemy
             {
                 rb.velocity = new Vector2(-Speed, jumpForce);
             }
-
         }
         //when the frog goes to the rightside. same with left side setting
         else
@@ -91,21 +85,7 @@ public class Enemy_Frog : Enemy
             {
                 rb.velocity = new Vector2(Speed, jumpForce);
             }
-
             anim.SetBool("jumping", true);
-            //if (Coll.IsTouchingLayers(Ground))
-            //{
-            //    anim.SetBool("jumping", true);
-            //    //rb.velocity = new Vector2(Speed, jumpForce);
-
-            //}
-
-            // if (transform.position.x > rightx)
-            // {
-            //     transform.localScale = new Vector3(1, 1, 1);
-            //     rb.velocity=new Vector2(0,0); //**********重置速度
-            //     Faceleft = true;
-            // }
         }
 
     }
@@ -119,13 +99,13 @@ public class Enemy_Frog : Enemy
             {
                 anim.SetBool("jumping", false);
                 anim.SetBool("falling", true);
-                
+
             }
         }
         if (Coll.IsTouchingLayers(Ground) && anim.GetBool("falling"))
         {
             anim.SetBool("falling", false);
-            
+
         }
     }
 }

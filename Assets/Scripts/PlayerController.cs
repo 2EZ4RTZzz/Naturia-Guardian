@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     //玩家的碰撞方框（可以是胶囊也可以是正方形）
     public Collider2D coll;
     public Collider2D DisColl;
+    public Collider2D Attack1_Coll;
     public float speed, jumpforce;
     //LayerMask 指的是图层，告诉系统那个图层是真正的地面.
     public LayerMask ground;
@@ -34,6 +35,13 @@ public class PlayerController : MonoBehaviour
 
     //pick up coins sound
     public AudioSource pickUpAudio;
+
+
+    public float Attack1finish=90;
+
+    //check the last 帧
+    // private Animation animationComponent;
+    // private AnimationClip animClip;
     
 
     void Start()
@@ -41,6 +49,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         isCrouching = false;
+        // animationComponent = GetComponent<Animation>();
+        // animClip = animationComponent.clip;
     }
 
     void Update()   //自适应变化帧数 ， 根据不同电脑 ，有的电脑卡 自动会掉帧 所以要fix叼
@@ -51,7 +61,17 @@ public class PlayerController : MonoBehaviour
             Movement();
         }
         SwitchAnim();
-        attack_1();
+        attack_2();
+        attack_3();
+        // if(animationComponent[animClip.].normalizedTime >= 1.0f){
+        //     anim.SetBool("idle",true);
+        // }
+        // if(Attack1finish>0){
+        //      Attack1finish --;
+        //     Attack1_Coll.enabled=true;
+        // }else{
+        //     Attack1_Coll.enabled=false;
+        // }
     }
     
     //move
@@ -59,8 +79,11 @@ public class PlayerController : MonoBehaviour
     {
         Crouch();
         float horizontalmove = Input.GetAxisRaw("Horizontal");  //get -1 , 0 , 1 if 1 right , -1 left
-        //左右移动
-        rb.velocity = new Vector2(horizontalmove * speed, rb.velocity.y);
+        //左右移动 !!!有bug 施法的时候不应该移动的
+        if(!anim.GetBool("attack_3")){
+            rb.velocity = new Vector2(horizontalmove * speed, rb.velocity.y);
+        }
+        
         if (!isCrouching) anim.SetFloat("running", Mathf.Abs(horizontalmove));
         //Time.deltaTime 乘以物理时钟的百分比 ， 所以在运行中 会变得平滑不跳帧数
         //rb.velocity = new Vector2(horizontalmove*speed,rb.velocity.y);
@@ -82,17 +105,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
-    void attack_1()
-    {   
-        //only can control by the keyboard.
-        if(Input.GetKeyDown(KeyCode.J))
+
+    void attack_2()
+    {
+        if(Input.GetKeyDown(KeyCode.K))
         {
-            anim.SetBool("attack_1",true);
+            anim.SetBool("attack_2",true);
         }
-        else if(Input.GetKeyUp(KeyCode.J))
+    }
+
+        void attack_3()
+    {
+        if(Input.GetKeyDown(KeyCode.L))
         {
-            anim.SetBool("attack_1",false);
+            anim.SetBool("attack_3",true);
+            // rb.velocity = new Vector2(horizontalmove * 0, 0);          
         }
     }
 
@@ -165,45 +192,7 @@ public class PlayerController : MonoBehaviour
     // 下蹲 crouching 
     void Crouch()
     {
-        //顶头 ， 如果钻进去   ， 不能让他站立！
-        //if (!Physics2D.OverlapCircle(CellingCheck.position, 0.2f, ground))
-        //{
-            //Debug.Log("头上没有碰撞");
-
-
-            //if (Input.GetButtonDown("Crouch"))
-            //{
-            //    isChrouching = true;
-            //    anim.SetBool("crouching", true);
-            //    DisColl.enabled = false;
-            //    coll.enabled = true;
-            //}
-            //if (Input.GetButtonUp("Crouch"))
-            //{
-            //    if (!Physics2D.OverlapCircle(CellingCheck.position, 0.2f, ground)) {
-            //        anim.SetBool("crouching", false);
-            //        coll.enabled = false;
-            //        DisColl.enabled = true;
-            //    }
-                
-            //}
-
-            //if (Input.GetButtonDown("Crouch"))
-            //{
-            //    Debug.Log("not press down crouch");
-            //}
-        //}
-        //else
-        //{
-        //    if(!Input.GetButtonDown("Crouch"))
-        //    {
-        //        anim.SetBool("crouching", false);
-        //        coll.enabled = false;
-        //        DisColl.enabled = true;
-        //    }
-
-        //}
-
+        //顶头 ， 如果钻进去，不能让他站立！
         if (Input.GetButtonDown("Crouch"))
         {
             isCrouching = true;
@@ -226,7 +215,6 @@ public class PlayerController : MonoBehaviour
             DisColl.enabled = true;
         }
     }
-
 
 
     //kill enemeies
@@ -262,7 +250,4 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-
-
 }

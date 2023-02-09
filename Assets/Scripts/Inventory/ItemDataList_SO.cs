@@ -13,5 +13,5 @@ using UnityEngine;
 //道具信息列表
 public class ItemDataList_SO : ScriptableObject
 {
-    public List<ItemDetails> itemDetialsList;
+    public List<ItemDetails> itemDetailsList;
 }

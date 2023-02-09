@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5260069617022465597}
   - component: {fileID: 5260069617022465586}
   - component: {fileID: 5260069617022465587}
+  - component: {fileID: 1776637082792359146}
   - component: {fileID: 5260069617022465584}
   - component: {fileID: 5260069617022465585}
   - component: {fileID: 5260069617022465590}
@@ -126,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coll: {fileID: 5260069617022465585}
   DisColl: {fileID: 5260069617022465590}
+  Attack1_Coll: {fileID: 0}
   speed: 7
   jumpforce: 12
   ground:
@@ -134,6 +136,21 @@ MonoBehaviour:
   CellingCheck: {fileID: 5260069618551361868}
   CherryNum: {fileID: 0}
   Cherry: 0
+  jumpAudio: {fileID: 0}
+  pickUpAudio: {fileID: 0}
+  Attack1finish: 90
+--- !u!114 &1776637082792359146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260069617022465582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e25850863816435e8fc8e208686849a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &5260069617022465584
 Animator:
   serializedVersion: 5

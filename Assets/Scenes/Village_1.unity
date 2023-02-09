@@ -952,7 +952,7 @@ GameObject:
   m_Component:
   - component: {fileID: 188301947}
   - component: {fileID: 188301946}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1291,7 +1291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234928305}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.9, y: 1.63, z: 0}
+  m_LocalPosition: {x: 2.58, y: 1.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5520,7 +5520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 268937611}
   - component: {fileID: 268937612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5535,7 +5535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268937610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.2703, y: -9.85, z: 0.16937324}
+  m_LocalPosition: {x: 13.47, y: -6.94, z: 0.16937324}
   m_LocalScale: {x: 0.89363956, y: 0.9142859, z: 1.0177}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6404,7 +6404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 421889318}
   - component: {fileID: 421889319}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: palm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6488,7 +6488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 429424579}
   - component: {fileID: 429424578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7829,7 +7829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 622619139}
   - component: {fileID: 622619140}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8520,14 +8520,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 698307242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab6aac344aa8354baee633c00785127, type: 3}
+  m_Script: {fileID: 11500000, guid: bc9162bb2d616fc4bba14d971ea5d329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 4
   damage: 1
   flashTime: 0.2
+  bloodEffect: {fileID: 0}
   speed: 2
-  startWaitTime: 1.5
+  startWaitTime: 1
   movePos: {fileID: 697844695}
   leftDownPos: {fileID: 804668821}
   rightUpPos: {fileID: 234928306}
@@ -9808,7 +9809,7 @@ GameObject:
   m_Component:
   - component: {fileID: 771732280}
   - component: {fileID: 771732281}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shrooms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12103,7 +12104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1158703117}
   - component: {fileID: 1158703118}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: plant-house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13493,107 +13494,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8655881296107407682, guid: 06b231ab7b602440c8652a1ba0619e9b, type: 3}
   m_PrefabInstance: {fileID: 1297764301}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1299536647 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4586900973255902493, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
-  m_PrefabInstance: {fileID: 4586900972877411209}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1299536648
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299536647}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a3ff8a98bf8e5ab4fa7f8b085fb35dd4, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!4 &1303724303 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8486718236324844000, guid: d7b6d8bfd75ae04419ce0e5721f66500, type: 3}
@@ -13894,7 +13794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1365931591}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16601,7 +16501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1744605421}
   - component: {fileID: 1744605422}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bush (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16685,7 +16585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1764036468}
   - component: {fileID: 1764036469}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bush (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18276,7 +18176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1929711950}
   - component: {fileID: 1929711951}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tree-house
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19738,7 +19638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4586900973255902481, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.53
+      value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 4586900973255902481, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19777,29 +19677,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4586900973255902483, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
-      propertyPath: damage
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4586900973255902483, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
-      propertyPath: health
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4586900973255902483, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
-      propertyPath: flashTime
-      value: 0.3
+      propertyPath: Ground.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4586900973255902493, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
       propertyPath: m_Name
       value: Frog
       objectReference: {fileID: 0}
-    - target: {fileID: 4586900973255902493, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4586900973255902495, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 69f8808ec8f32ef40b0840d9b07e2282, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
 --- !u!1001 &4702280310833710849

@@ -20,9 +20,6 @@ public class Enemy_Frog : Enemy
     public float Speed;
     public float jumpForce;
 
-
-
-
     // Start is called before the first frame update
     protected override void Start()
     //override the start .

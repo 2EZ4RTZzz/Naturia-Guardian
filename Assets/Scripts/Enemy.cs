@@ -17,6 +17,9 @@ public class Enemy : MonoBehaviour
     //flash time 
     public float flashTime;
 
+    //blooddropping effect
+    public GameObject bloodEffect;
+
 
 
     // Start is called before the first frame update
@@ -50,6 +53,8 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
         FlashColor(flashTime);
+        //it will drops the blood in 1 sec (just 1 sec)
+        Instantiate(bloodEffect,transform.position,Quaternion.identity);
     }
 
     //can be used from other class cause is open public

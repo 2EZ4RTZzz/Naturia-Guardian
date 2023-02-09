@@ -20,6 +20,9 @@ public class Enemy_Frog : Enemy
     public float Speed;
     public float jumpForce;
 
+
+
+
     // Start is called before the first frame update
     protected override void Start()
     //override the start .
@@ -39,6 +42,7 @@ public class Enemy_Frog : Enemy
         //you wont see a lot left/right on the hierarchy if there's a lot forgs in the map.
         Destroy(leftpoint.gameObject);
         Destroy(rightpoint.gameObject);
+
     }
 
     // Update is called once per frame
@@ -108,4 +112,5 @@ public class Enemy_Frog : Enemy
 
         }
     }
+
 }

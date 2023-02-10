@@ -205,7 +205,7 @@ MonoBehaviour:
   health: 4
   damage: 1
   flashTime: 0.3
-  bloodEffect: {fileID: 7740932757552547578, guid: 973b1e823c9f1e14da29ec554f2fa289, type: 3}
+  bloodEffect: {fileID: 1441474821978125024, guid: cab9f2d1492c19d41b6c9c944343fdb2, type: 3}
   Ground:
     serializedVersion: 2
     m_Bits: 8

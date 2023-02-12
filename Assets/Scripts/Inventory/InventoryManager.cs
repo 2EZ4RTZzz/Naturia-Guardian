@@ -26,15 +26,6 @@ namespace Shameless.Inventory
             var index = GetItemIndexInBag(item.itemID);
 
             AddItemAtIndex(item.itemID, index, 1);
-            //if (!CheckBagCapacity())
-            //{
-            //    return;
-            //}
-
-            //InventoryItem newItem = new InventoryItem();
-            //newItem.itemID = item.itemID;
-            //newItem.itemAmout = 1;
-            //playerBag.itemList[0] = newItem;
 
             if (toDestroy)
             {

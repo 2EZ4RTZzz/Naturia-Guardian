@@ -206,6 +206,7 @@ MonoBehaviour:
   damage: 1
   flashTime: 0.3
   bloodEffect: {fileID: 1441474821978125024, guid: cab9f2d1492c19d41b6c9c944343fdb2, type: 3}
+  floatPoint: {fileID: 5915434104370894641, guid: 6dbc291268f2a1a4288b6480d12cb75a, type: 3}
   Ground:
     serializedVersion: 2
     m_Bits: 8

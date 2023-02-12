@@ -39,10 +39,11 @@ public class Enemy : MonoBehaviour
 
     protected virtual void update()
     {
-        if (health <= 0)
+        if (health == 0)
         {
             GetAttack();
-            // Death();
+            
+            // deathAudio.Play();
         }
     }
     //death animation
@@ -56,7 +57,13 @@ public class Enemy : MonoBehaviour
     public void TakeDamge(int damage)
     {
         //damage point.
-        Instantiate(floatPoint,transform.position,Quaternion.identity);
+        //局部变量
+        GameObject gb = Instantiate(floatPoint,transform.position,Quaternion.identity) as GameObject;
+        //**** important learn******
+        //real time damage valuefeedback.
+        gb.transform.GetChild(0).GetComponent<TextMesh>().text= damage.ToString();
+        
+        
         health -= damage;
         FlashColor(flashTime);
         //it will drops the blood in 1 sec (just 1 sec)
@@ -73,7 +80,8 @@ public class Enemy : MonoBehaviour
 
     public void GetAttack()
     {
-        deathAudio.Play();
+        // deathAudio.Play();
+        // Debug.Log("123");
         anim.SetTrigger("death");
     }
 

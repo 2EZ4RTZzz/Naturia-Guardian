@@ -13,7 +13,7 @@ public class Enemy_Vulture : Enemy
     public Transform rightUpPos;
 
     // Start is called before the first frame update
-    public new void Start()
+    void Start()
     {
         base.Start();
         waitTime = startWaitTime;
@@ -21,7 +21,7 @@ public class Enemy_Vulture : Enemy
     }
 
     // Update is called once per frame
-    public new void Update()
+    void Update()
     {
         //调用父类的Update()方法
         base.update();

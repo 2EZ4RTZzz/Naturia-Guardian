@@ -18,13 +18,18 @@ public class PlayerHealth : MonoBehaviour
 
     //poly hit tracps
     public float hitBoxCDTime;
-    // Start is called before the first frame update
+    // Start is called before the first frame update        
 
+    //player death animation
+    private Animator anim;
+
+    public float dieTime;
     
     void Start()
     {
         myRender = GetComponent<Renderer>();
         polygonCollider2D = GetComponent<PolygonCollider2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -40,7 +45,8 @@ public class PlayerHealth : MonoBehaviour
 
         if(health <=0)
         {
-            Destroy(gameObject);
+            anim.SetTrigger("die");
+            Invoke("playerDead",dieTime);
         }
         BlinkPlayer(Blinks,time);
         polygonCollider2D.enabled=false;
@@ -56,6 +62,10 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
+    void playerDead()
+    {
+        Destroy(gameObject);
+    }
     //player get hurts will blink for x secs
     void BlinkPlayer(int numBlinks, float seconds)
     {

@@ -23,12 +23,18 @@ public class Enemy : MonoBehaviour
     //blood fly
     public GameObject floatPoint;
 
+    //get playerhealth 
+    private PlayerHealth playerHealth;
+
 
 
     // Start is called before the first frame update
     protected virtual void Start()
     // ****virtual*** means is temporary  , it can be edit in child class later
     {
+        //load player's hp info
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+
         anim = GetComponent<Animator>();
         deathAudio = GetComponent<AudioSource>();
 
@@ -66,7 +72,7 @@ public class Enemy : MonoBehaviour
         
         health -= damage;
         FlashColor(flashTime);
-        //it will drops the blood in 1 sec (just 1 sec)
+        //bloodeffect for 1sec
         Instantiate(bloodEffect,transform.position,Quaternion.identity);
     }
 
@@ -103,5 +109,31 @@ public class Enemy : MonoBehaviour
     void ResetColor()
     {
         sr.color = originalColor;
+    }
+
+    // player Health method 
+
+    // void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     // && other.GetType().ToString() == "UnityEngine.CapsuleCollider2D"
+    //     if (other.gameObject.CompareTag("Player") && other.GetType().ToString() == "UnityEngine.CapsuleCollider2D" )
+    //     {
+    //         if(playerHealth != null)
+    //         {
+    //             playerHealth.DamagePlayer(damage);
+    //         }            
+    //     }
+    // }  
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+                // && other.GetType().ToString() == "UnityEngine.CapsuleCollider2D"
+        if (other.gameObject.CompareTag("Player") )
+        {
+            if(playerHealth != null)
+            {
+                playerHealth.DamagePlayer(damage);
+            }            
+        }
     }
 }

@@ -118,35 +118,3 @@ public class Enemy_Eagle : Enemy
         }
     }
 }
-
-
-    // void ChasePlayer()
-    // {
-    //     Debug.Log("123");
-    //     if(Mathf.Abs(player.transform.position.x-transform.position.x) <= 15){
-
-    //         anim.SetBool("attack",true);
-    //         // isAttacking=true;
-
-    //         // Eagleattack();
-    //     }else{
-    //         // isAttacking=false;
-    //         // Eagleattack();
-    //         anim.SetBool("attack",false);
-    //     }
-    // }
-    // void Eagleattack()
-    // {
-    //     if(isAttacking){
-    //         anim.SetBool("attack",true);
-    //     }
-    //     else{
-    //         anim.SetBool("attack",false);
-    //     }
-    // }
-
-
-
-// 爆炸
-//  lockdown x,y,z
-// rb.constraints = RigidbodyConstraints2D.FreezeAll;

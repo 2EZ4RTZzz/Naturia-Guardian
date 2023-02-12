@@ -59,7 +59,6 @@ public class FireRabbitAttack1 : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy"))
         {
            other.GetComponent<Enemy>().TakeDamge(damage);
-
         }
     }
 

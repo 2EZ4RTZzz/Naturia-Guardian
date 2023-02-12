@@ -20,6 +20,9 @@ public class Enemy : MonoBehaviour
     //blooddropping effect
     public GameObject bloodEffect;
 
+    //blood fly
+    public GameObject floatPoint;
+
 
 
     // Start is called before the first frame update
@@ -49,8 +52,11 @@ public class Enemy : MonoBehaviour
     }
 
     //when the enemy TaketheDamage from the player method*****
+    //受到伤害
     public void TakeDamge(int damage)
     {
+        //damage point.
+        Instantiate(floatPoint,transform.position,Quaternion.identity);
         health -= damage;
         FlashColor(flashTime);
         //it will drops the blood in 1 sec (just 1 sec)

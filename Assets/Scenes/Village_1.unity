@@ -21445,10 +21445,6 @@ PrefabInstance:
       propertyPath: m_Font
       value: 
       objectReference: {fileID: 12800000, guid: 29821db8324231f4481e730bf6288b9c, type: 2}
-    - target: {fileID: 1645636897736176744, guid: 6dbc291268f2a1a4288b6480d12cb75a, type: 3}
-      propertyPath: m_CharacterSize
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1645636897736176745, guid: 6dbc291268f2a1a4288b6480d12cb75a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

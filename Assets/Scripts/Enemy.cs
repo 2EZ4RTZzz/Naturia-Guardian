@@ -26,6 +26,9 @@ public class Enemy : MonoBehaviour
     //get playerhealth 
     private PlayerHealth playerHealth;
 
+    //death boolean 
+    private bool isDeath=false;
+    private float countDown = 30;
 
 
     // Start is called before the first frame update
@@ -45,11 +48,11 @@ public class Enemy : MonoBehaviour
 
     protected virtual void update()
     {
-        if (health == 0)
+        //add a time count down for 1-2 secs********************************************
+        if (isDeath)
         {
-            GetAttack();
-            
-            // deathAudio.Play();
+            countDown-=Time.deltaTime;
+            if(countDown<=0) Death();
         }
     }
     //death animation
@@ -64,6 +67,9 @@ public class Enemy : MonoBehaviour
     {
         //damage point.
         //局部变量
+        if(isDeath){
+            return;
+        }
         GameObject gb = Instantiate(floatPoint,transform.position,Quaternion.identity) as GameObject;
         //**** important learn******
         //real time damage valuefeedback.
@@ -71,9 +77,15 @@ public class Enemy : MonoBehaviour
         
         
         health -= damage;
+        if(health<= 0 ){
+            //add a time count down for 1-2 secs********************************************
+            GetAttack();
+            isDeath=true;
+        }
         FlashColor(flashTime);
         //bloodeffect for 1sec
         Instantiate(bloodEffect,transform.position,Quaternion.identity);
+        
     }
 
     //can be used from other class cause is open public
@@ -86,7 +98,7 @@ public class Enemy : MonoBehaviour
 
     public void GetAttack()
     {
-        // deathAudio.Play();
+        deathAudio.Play();
         // Debug.Log("123");
         anim.SetTrigger("death");
     }

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BuffState_SO
   m_EditorClassIdentifier: 
   buffList:
-  - itemID: 1002
-    itemAmount: 1
+  - itemID: 0
+    itemAmount: 0
   - itemID: 0
     itemAmount: 0
   - itemID: 0

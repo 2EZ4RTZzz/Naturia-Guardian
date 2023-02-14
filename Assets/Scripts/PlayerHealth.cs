@@ -30,6 +30,9 @@ public class PlayerHealth : MonoBehaviour
         myRender = GetComponent<Renderer>();
         polygonCollider2D = GetComponent<PolygonCollider2D>();
         anim = GetComponent<Animator>();
+        //set the hp
+        HealthBar.HealthMax= health;
+        HealthBar.HealthCurrent= health;
     }
 
     // Update is called once per frame
@@ -41,7 +44,14 @@ public class PlayerHealth : MonoBehaviour
     //public
     public void DamagePlayer(int damage)
     {
+        //relate to the HP bar
         health -= damage;
+        if(health < 0)
+        {
+            //GG!!!!!! 2023-02-14-3:21 AM FUCKING AM!!!
+            health=0;
+        }
+        HealthBar.HealthCurrent = health;
 
         if(health <=0)
         {

@@ -70,10 +70,12 @@ public class FireRabbitAttack1 : MonoBehaviour
         if (other.gameObject.CompareTag("MeltIce") && fireBuff_1)
         {
             Vector3 scale = other.gameObject.transform.localScale;
+            // anim.SetTrigger("shaking");
             scale.x -= 0.1f;
             scale.y -= 0.1f;
             scale.z -= 0.1f;
             other.gameObject.transform.localScale = scale;
+            
         }
     }
 

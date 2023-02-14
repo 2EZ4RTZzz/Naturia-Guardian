@@ -63,7 +63,7 @@ namespace Shameless.Inventory
             for (int i = 0; i < buffState.buffList.Count; i++)
             {
                 if (buffState.buffList[i].itemID == ID)
-                    return i;
+                    return i++;
             }
             return -1;
         }
@@ -104,11 +104,25 @@ namespace Shameless.Inventory
         //amount可能没有用，但是我怕出错，所以先留着
         private void AddBuffAtIndex(int ID, int index, int amount)
         {
-            
-                int currentAmount = buffState.buffList[index].itemAmount + amount;
-                var item = new InventoryItem { itemID = ID, itemAmount = currentAmount };
+            if (index == -1)
+            {
+                var item = new InventoryItem { itemID = ID, itemAmount = amount };
+                for (int i = 0; i < buffState.buffList.Count; i++)
+                {
+                    if (buffState.buffList[i].itemID == 0)
+                    {
+                        buffState.buffList[i] = item;
+                        break;
+                    }
+                }
+            }
+            //else
+            //{
+            //    int currentAmount = buffState.buffList[index].itemAmount + amount;
+            //    var item = new InventoryItem { itemID = ID, itemAmount = currentAmount };
 
-                buffState.buffList[index] = item;
+            //    buffState.buffList[index] = item;
+            //}
         }
     }
 }

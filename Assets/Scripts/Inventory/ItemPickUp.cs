@@ -62,15 +62,21 @@ namespace Shameless.Inventory
             Item item = collision.GetComponent<Item>();
             if (isSelected)
             {
-                
                 InventoryManager.Instance.ActivateBuff(item, true);
             }
         }
 
         private void SelectBuff()
         {
-            if (Input.GetKeyDown(KeyCode.H)) isSelected = true;
-            if (Input.GetKeyUp(KeyCode.H)) isSelected = false;
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                
+                isSelected = true;
+            }
+            if (Input.GetKeyUp(KeyCode.H))
+            {
+                isSelected = false;
+            }
         }
     }
 }

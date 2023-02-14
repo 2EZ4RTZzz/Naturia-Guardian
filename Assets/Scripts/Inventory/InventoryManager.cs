@@ -10,6 +10,7 @@ namespace Shameless.Inventory
         public ItemDataList_SO itemDataList_SO;
         [Header("Bag Data")]
         public InventoryBag_SO playerBag;
+        public BuffState_SO buffState;
 
         private void Start()
         {
@@ -35,11 +36,29 @@ namespace Shameless.Inventory
             EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
         }
 
+        public void ActivateBuff(Item item, bool toDestroy)
+        {
+            if (toDestroy)
+            {
+                Destroy(item.gameObject);
+            }
+        }
+
         private int GetItemIndexInBag(int ID)
         {
             for (int i = 0; i < playerBag.itemList.Count; i++)
             {
                 if (playerBag.itemList[i].itemID == ID)
+                    return i;
+            }
+            return -1;
+        }
+
+        private int GetBuffIndexInPlayer(int ID)
+        {
+            for (int i = 0; i < buffState.buffList.Count; i++)
+            {
+                if (buffState.buffList[i].itemID == ID)
                     return i;
             }
             return -1;

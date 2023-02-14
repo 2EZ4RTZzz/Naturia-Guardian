@@ -35,17 +35,17 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 1
-  - itemID: 0
-    name: 
-    itemType: 0
-    itemIcon: {fileID: 0}
-    itemOnWorldSprite: {fileID: 0}
-    itemDescription: 
+  - itemID: 1002
+    name: Fire Lv.1
+    itemType: 4
+    itemIcon: {fileID: 21300000, guid: 95341990c33364c678a53e692563c891, type: 3}
+    itemOnWorldSprite: {fileID: 21300000, guid: 95341990c33364c678a53e692563c891, type: 3}
+    itemDescription: Fire attack can melt ice
     itemUseRadius: 0
     canPickUp: 0
     canTrade: 0
     canSynthesize: 0
-    canActivate: 0
+    canActivate: 1
   - itemID: 0
     name: 
     itemType: 0

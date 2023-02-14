@@ -39,9 +39,7 @@ public class PlayerController : MonoBehaviour
 
     public float Attack1finish=90;
 
-    //buff状态
-    public BuffState_SO buffState;
-    public bool fireBuff_1;
+    
 
     //check the last 帧
     // private Animation animationComponent;
@@ -53,7 +51,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         isCrouching = false;
-        fireBuff_1 = false;
         // animationComponent = GetComponent<Animation>();
         // animClip = animationComponent.clip;
     }
@@ -77,8 +74,6 @@ public class PlayerController : MonoBehaviour
         // }else{
         //     Attack1_Coll.enabled=false;
         // }
-
-        checkBuffState();
     }
     
     //move
@@ -255,15 +250,6 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(5, rb.velocity.y);
                 isHurt = true;
             }
-        }
-    }
-
-    private void checkBuffState()
-    {
-        for (int i=0; i<buffState.buffList.Count; i++)
-        {
-            var id = buffState.buffList[i].itemID;
-            if (id == 1002) fireBuff_1 = true;
         }
     }
 }

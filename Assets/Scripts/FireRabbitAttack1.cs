@@ -10,17 +10,23 @@ public class FireRabbitAttack1 : MonoBehaviour
     private Animator anim;
     private PolygonCollider2D Attack1Coll;
 
+    //buff状态
+    public BuffState_SO buffState;
+    public bool fireBuff_1;
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         Attack1Coll = GetComponent<PolygonCollider2D>();
+        fireBuff_1 = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         attack();
+        checkBuffState();
     }
 
     void attack()
@@ -59,6 +65,24 @@ public class FireRabbitAttack1 : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy"))
         {
            other.GetComponent<Enemy>().TakeDamge(damage);
+        }
+
+        if (other.gameObject.CompareTag("MeltIce") && fireBuff_1)
+        {
+            Vector3 scale = other.gameObject.transform.localScale;
+            scale.x -= 0.1f;
+            scale.y -= 0.1f;
+            scale.z -= 0.1f;
+            other.gameObject.transform.localScale = scale;
+        }
+    }
+
+    private void checkBuffState()
+    {
+        for (int i = 0; i < buffState.buffList.Count; i++)
+        {
+            var id = buffState.buffList[i].itemID;
+            if (id == 1002) fireBuff_1 = true;
         }
     }
 

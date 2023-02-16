@@ -14,6 +14,7 @@ namespace Shameless.Inventory
 
         private void Start()
         {
+            InitializeGameData();
             EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
         }
 
@@ -124,6 +125,21 @@ namespace Shameless.Inventory
 
             //    buffState.buffList[index] = item;
             //}
+        }
+
+        private void InitializeGameData()
+        {
+            var emptyItem = new InventoryItem { itemID = 0, itemAmount = 0 };
+
+            for (int i = 0; i < buffState.buffList.Count; i++)
+            {
+                buffState.buffList[i] = emptyItem;
+            }
+
+            for (int i = 0; i < playerBag.itemList.Count; i++)
+            {
+                playerBag.itemList[i] = emptyItem;
+            }
         }
     }
 }

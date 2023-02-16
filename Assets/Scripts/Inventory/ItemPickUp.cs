@@ -60,7 +60,7 @@ namespace Shameless.Inventory
         private void OnTriggerStay2D(Collider2D collision)
         {
             Item item = collision.GetComponent<Item>();
-            if (isSelected)
+            if (isSelected && item != null)
             {
                 InventoryManager.Instance.ActivateBuff(item, true);
             }

@@ -46,6 +46,7 @@ namespace Shameless.Inventory
             {
                 Destroy(item.gameObject);
             }
+            EventHandler.CallUpdateBuffUI(InventoryLocation.Player, buffState.buffList);
         }
 
         private int GetItemIndexInBag(int ID)

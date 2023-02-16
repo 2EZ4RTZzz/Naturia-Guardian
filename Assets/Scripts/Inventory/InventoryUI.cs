@@ -12,14 +12,20 @@ namespace Shameless.Inventory
 
         [SerializeField] private SlotUI[] playerSlots;
 
+        [Header("Player Bbuff UI")]
+        [SerializeField] private GameObject buffUI;
+        [SerializeField] private BuffSlotUI[] playerBuffs;
+
         private void OnEnable()
         {
             EventHandler.UpdateInventoryUI += OnUpdateInventoryUI;
+            EventHandler.UpdateBuffUI += OnUpdateBuffUI;
         }
 
         private void OnDisable()
         {
             EventHandler.UpdateInventoryUI -= OnUpdateInventoryUI;
+            EventHandler.UpdateBuffUI -= OnUpdateBuffUI;
         }
 
         private void Start()
@@ -29,6 +35,11 @@ namespace Shameless.Inventory
                 playerSlots[i].slotIndex = i;
             }
             bagOpened = bagUI.activeInHierarchy;
+
+            for (int i = 0; i < playerBuffs.Length; i++)
+            {
+                playerBuffs[i].slotIndex = i;
+            }
         }
 
         private void Update()
@@ -54,6 +65,27 @@ namespace Shameless.Inventory
                         else
                         {
                             playerSlots[i].UpdateEmptySlot();
+                        }
+                    }
+                    break;
+            }
+        }
+
+        private void OnUpdateBuffUI(InventoryLocation location, List<InventoryItem> list)
+        {
+            switch (location)
+            {
+                case InventoryLocation.Player:
+                    for (int i = 0; i < playerBuffs.Length; i++)
+                    {
+                        if (list[i].itemAmount > 0)
+                        {
+                            var item = InventoryManager.Instance.GetItemDetails(list[i].itemID);
+                            playerBuffs[i].UpdateSlot(item);
+                        }
+                        else
+                        {
+                            playerBuffs[i].UpdateEmptySlot();
                         }
                     }
                     break;

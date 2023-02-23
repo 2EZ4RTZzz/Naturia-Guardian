@@ -11,6 +11,7 @@ public class CraftingTable : MonoBehaviour
     [SerializeField] private TextMeshProUGUI pageNoTxt;
     [SerializeField] private GameObject[] pageList;
     [SerializeField] private GameObject[] craftingList1, craftingList2;
+    [SerializeField] private GameObject buffDetails;
     private int pageNo, craftingListIndex;
     private bool canOpenCraftingTable;
     // Start is called before the first frame update
@@ -93,24 +94,27 @@ public class CraftingTable : MonoBehaviour
 
             if (pageNo == 1)
             {
-                craftingList1[craftingListIndex-1].GetComponent<Image>().color = new Color(0.8f,0.8f, 0.8f, 1);
-                for (int i=0; i<craftingList1.Length; i++)
-                {
-                    if (i != craftingListIndex - 1) craftingList1[i].GetComponent<Image>().color = Color.white;
-                }
+                CraftingListHandler(craftingList1);
             }
-            if (pageNo == 2)
+            else if (pageNo == 2)
             {
-                craftingList2[craftingListIndex - 1].GetComponent<Image>().color = new Color(0.8f, 0.8f, 0.8f, 1);
-                for (int i = 0; i < craftingList2.Length; i++)
-                {
-                    if (i != craftingListIndex - 1) craftingList2[i].GetComponent<Image>().color = Color.white;
-                }
+                CraftingListHandler(craftingList2);
             }
         }
         else
         {
             player.isCrafting = false;
+        }
+    }
+
+    private void CraftingListHandler(GameObject[] lst)
+    {
+        int index = craftingListIndex - 1;
+        lst[index].GetComponent<Image>().color = new Color(0.8f, 0.8f, 0.8f, 1);
+        buffDetails.GetComponent<BuffDetails>().UpdateDetails(lst[index].GetComponent<BuffInfo>().itemID);
+        for (int i = 0; i < lst.Length; i++)
+        {
+            if (i != index) lst[i].GetComponent<Image>().color = Color.white;
         }
     }
 }

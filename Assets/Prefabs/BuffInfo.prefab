@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4733950237072175323}
   - component: {fileID: 4733950237072175321}
   - component: {fileID: 4733950237072175320}
+  - component: {fileID: 8640212450569303478}
   m_Layer: 5
   m_Name: BuffInfo
   m_TagString: Untagged
@@ -78,6 +79,33 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8640212450569303478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4733950237072175322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8398263011cff4476be3cbf95dafe30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 0
+  itemDetails:
+    itemID: 0
+    name: 
+    itemType: 0
+    itemIcon: {fileID: 0}
+    itemOnWorldSprite: {fileID: 0}
+    itemDescription: 
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 0
+  icon: {fileID: 4733950237245774252}
+  buffName: {fileID: 4733950237103848434}
 --- !u!1 &4733950237103848428
 GameObject:
   m_ObjectHideFlags: 0

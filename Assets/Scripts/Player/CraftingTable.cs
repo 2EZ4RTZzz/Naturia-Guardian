@@ -8,7 +8,7 @@ public class CraftingTable : MonoBehaviour
     [SerializeField] private GameObject craftingTableDialogue;
     [SerializeField] private GameObject craftingTable;
     [SerializeField] private TextMeshProUGUI pageNoTxt;
-    [SerializeField] private GameObject[] craftingList;
+    [SerializeField] private GameObject[] pageList;
     private int pageNo;
     private bool canOpenCraftingTable;
     // Start is called before the first frame update
@@ -74,10 +74,10 @@ public class CraftingTable : MonoBehaviour
             }
 
             int index = pageNo - 1;
-            craftingList[index].SetActive(true);
-            for(int i=0; i<craftingList.Length; i++)
+            pageList[index].SetActive(true);
+            for(int i=0; i<pageList.Length; i++)
             {
-                if (i != index) craftingList[i].SetActive(false);
+                if (i != index) pageList[i].SetActive(false);
             }
          }
         else

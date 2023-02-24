@@ -1063,6 +1063,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 0
+    canUse: 0
 --- !u!61 &119236339
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7612,6 +7613,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 0
+    canUse: 0
 --- !u!61 &310702981
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10335,6 +10337,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 0
+    canUse: 0
 --- !u!61 &671077080
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16829,6 +16832,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 0
+    canUse: 0
   icon: {fileID: 276284327}
   buffName: {fileID: 1150093817}
   buffDescription: {fileID: 101224605}
@@ -17576,6 +17580,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 0
+    canUse: 0
 --- !u!61 &1214091018
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22051,6 +22056,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 0
+    canUse: 0
 --- !u!61 &1634658139
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27012,6 +27018,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 0
+    canUse: 0
 --- !u!61 &2102813091
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27097,6 +27104,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 0
+    canUse: 0
 --- !u!61 &2104991584
 BoxCollider2D:
   m_ObjectHideFlags: 0

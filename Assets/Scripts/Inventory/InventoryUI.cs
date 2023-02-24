@@ -9,6 +9,7 @@ namespace Shameless.Inventory
         [Header("Player Bag UI")]
         [SerializeField] private GameObject bagUI;
         private bool bagOpened;
+        private int bagIndex;
 
         [SerializeField] private SlotUI[] playerSlots;
 
@@ -30,6 +31,8 @@ namespace Shameless.Inventory
 
         private void Start()
         {
+            bagIndex = 0;
+
             for (int i = 0; i < playerSlots.Length; i++)
             {
                 playerSlots[i].slotIndex = i;
@@ -47,6 +50,10 @@ namespace Shameless.Inventory
             if (Input.GetKeyDown(KeyCode.B))
             {
                 OpenBagUI();
+            }
+            if (bagOpened)
+            {
+                UpdateSlotHighlight();
             }
         }
 
@@ -94,23 +101,36 @@ namespace Shameless.Inventory
 
         public void OpenBagUI()
         {
+            PlayerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
             bagOpened = !bagOpened;
             bagUI.SetActive(bagOpened);
+            if (bagUI.activeSelf) player.bagOpening = true;
+            else player.bagOpening = false;
         }
 
-        public void UpdateSlotHighlight(int index)
+        private void UpdateSlotHighlight()
         {
-            foreach (var slot in playerSlots)
+            playerSlots[bagIndex].slotHighlight.gameObject.SetActive(true);
+            for (int i=0; i<playerSlots.Length; i++)
             {
-                if (slot.isSelected && slot.slotIndex == index)
-                {
-                    slot.slotHighlight.gameObject.SetActive(true);
-                }
-                else
-                {
-                    slot.isSelected = false;
-                    slot.slotHighlight.gameObject.SetActive(false);
-                }
+                if (i != bagIndex) playerSlots[i].slotHighlight.gameObject.SetActive(false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                if (bagIndex > 4) bagIndex -= 5;
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                if (bagIndex < 20) bagIndex += 5;
+            }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                if (bagIndex > 0) bagIndex --;
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                if (bagIndex < 24) bagIndex++;
             }
         }
     }

@@ -69,12 +69,12 @@ public class BuffDetails : MonoBehaviour
         else if (itemID == 1003)
         {
             int ID1 = 1000;
-            int ID2 = 1001;
+            int ID2 = 0;
             int ID3 = 0;
             int ID4 = 0;
 
             int num1 = 2;
-            int num2 = 1;
+            int num2 = 0;
             int num3 = 0;
             int num4 = 0;
 

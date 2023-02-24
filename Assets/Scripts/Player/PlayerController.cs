@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private bool isHurt;  //默认是False
     private bool isCrouching;
     public bool isCrafting;
+    public bool bagOpening;
 
     //记录吃了多少樱桃
     public int Cherry = 0;
@@ -59,7 +60,7 @@ public class PlayerController : MonoBehaviour
     void Update()   //自适应变化帧数 ， 根据不同电脑 ，有的电脑卡 自动会掉帧 所以要fix叼
     {
         //!isHurt 反而是true 当受到伤害 不执行Movement
-        if (!isHurt && !isCrafting)
+        if (!isHurt && !isCrafting && !bagOpening)
         {
             Movement();
         }

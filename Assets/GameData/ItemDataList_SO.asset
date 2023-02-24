@@ -24,9 +24,10 @@ MonoBehaviour:
     canTrade: 1
     canSynthesize: 1
     canActivate: 0
+    canUse: 0
   - itemID: 1001
     name: Recipe
-    itemType: 0
+    itemType: 2
     itemIcon: {fileID: -41407249, guid: 4b6db0874b9ecd54e92fbc5ec5131a66, type: 3}
     itemOnWorldSprite: {fileID: -41407249, guid: 4b6db0874b9ecd54e92fbc5ec5131a66, type: 3}
     itemDescription: Double Jump Recipe
@@ -35,6 +36,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 0
+    canUse: 1
   - itemID: 1002
     name: Fire Lv.1
     itemType: 4
@@ -46,6 +48,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 1
+    canUse: 0
   - itemID: 1003
     name: test buff
     itemType: 3
@@ -57,6 +60,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 1
+    canUse: 0
   - itemID: 1004
     name: Crit Lv.1
     itemType: 3
@@ -68,6 +72,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 1
+    canUse: 0
   - itemID: 0
     name: 
     itemType: 0
@@ -79,6 +84,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 0
+    canUse: 0
   - itemID: 0
     name: 
     itemType: 0
@@ -90,6 +96,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 0
+    canUse: 0
   - itemID: 0
     name: 
     itemType: 0
@@ -101,6 +108,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 0
+    canUse: 0
   - itemID: 0
     name: 
     itemType: 0
@@ -112,6 +120,7 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 0
+    canUse: 0
   - itemID: 0
     name: 
     itemType: 0
@@ -123,3 +132,4 @@ MonoBehaviour:
     canTrade: 0
     canSynthesize: 0
     canActivate: 0
+    canUse: 0

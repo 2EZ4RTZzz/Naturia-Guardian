@@ -30,6 +30,8 @@ public class ItemDetails
     public bool canSynthesize; //道具可以被合成
 
     public bool canActivate; //buff可以被激活
+
+    public bool canUse;
 }
 
 [System.Serializable]

@@ -104,7 +104,7 @@ namespace Shameless.Inventory
                     if (craftingLst[j].GetComponent<BuffInfo>().itemID == 0)
                     {
                         craftingLst[j].GetComponent<BuffInfo>().itemID = ID;
-                        unlockRecipeDisplay.GetComponent<UnlockCraftingRecipe>().displayTimer = 300;
+                        unlockRecipeDisplay.GetComponent<UnlockCraftingRecipe>().displayTimer = 1500;
                         breakLoop = true;
                         break;
                     }

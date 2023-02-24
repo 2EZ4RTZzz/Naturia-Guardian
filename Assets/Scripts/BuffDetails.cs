@@ -27,6 +27,10 @@ public class BuffDetails : MonoBehaviour
         
     }
 
+    /*
+     * 给UpdateDetials传递Buff的ID，以更新Buff的详情页面UI显示
+     * 在CraftingTable中的CraftingListHandler中调用
+     */
     public void UpdateDetails(int ID)
     {
         itemID = ID;
@@ -97,6 +101,13 @@ public class BuffDetails : MonoBehaviour
         else SeedHandler(0, 0, 0, 0, 0, 0, 0, 0);
     }
 
+    /*
+     * 显示buff所对应的合成所需的种子数量
+     * 八个参数，前四个是种子对应的ID，后四个是合成所需种子的数量
+     * 合成一个buff最多需要用到四种种子
+     * 当ID = 0的时候，不需要种子
+     * 在UpdateDetails里面调用该方法，直接复制上面的代码，然后修改参数
+     */
     private void SeedHandler(int ID1, int ID2, int ID3, int ID4, int num1, int num2, int num3, int num4)
     {
         ItemDetails seedDetails1 = InventoryManager.Instance.GetItemDetails(ID1);

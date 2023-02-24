@@ -17,6 +17,7 @@ public class UnlockCraftingRecipe : MonoBehaviour
 
     }
 
+    //显示解锁Buff合成的提示
     public void Display()
     {
         if (displayTimer > 0)

@@ -59,6 +59,9 @@ public class CraftingTable : MonoBehaviour
         }
     }
 
+    /*
+     * 合成台列表选取和翻页的键盘操作
+     */
     private void Crafting()
     {
         PlayerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -107,6 +110,9 @@ public class CraftingTable : MonoBehaviour
         }
     }
 
+    /*
+     * 当玩家键盘输入选取到Buff时，显示其对应的详情数据ß
+     */
     private void CraftingListHandler(GameObject[] lst)
     {
         int index = craftingListIndex - 1;

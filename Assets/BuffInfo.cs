@@ -22,6 +22,10 @@ public class BuffInfo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (icon.sprite == null)
+        {
+            icon.gameObject.SetActive(false);
+            buffName.text = "???";
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace Shameless.Inventory
         [SerializeField] private TextMeshProUGUI nameText;
         [SerializeField] private TextMeshProUGUI descriptionText;
         private bool isSelected = false;
+        private GameObject[] craftingLst;
 
         private void Update()
         {
@@ -40,6 +41,15 @@ namespace Shameless.Inventory
                     nameText.text = item.itemDetails.name;
                     descriptionText.text = item.itemDetails.itemDescription;
                     buffInfo.SetActive(true);
+                }
+
+                if (item.itemDetails.canUse)
+                {
+                    if (item.itemID == 1001)
+                    {
+                        UnlockRecipe(1004);
+                    }
+                    Destroy(item.gameObject);
                 }
             }
         }
@@ -76,6 +86,24 @@ namespace Shameless.Inventory
             if (Input.GetKeyUp(KeyCode.H))
             {
                 isSelected = false;
+            }
+        }
+
+        private void UnlockRecipe(int ID)
+        {
+            for (int i=0; i< 1; i++)
+            {
+                if (i == 0) craftingLst = GameObject.FindGameObjectWithTag("Player").GetComponent<CraftingTable>().craftingList1;
+                else if (i == 1) craftingLst = GameObject.FindGameObjectWithTag("Player").GetComponent<CraftingTable>().craftingList2;
+
+                for (int j = 0; j < craftingLst.Length; j++)
+                {
+                    if (craftingLst[j].GetComponent<BuffInfo>().itemID == 0)
+                    {
+                        craftingLst[j].GetComponent<BuffInfo>().itemID = ID;
+                        break;
+                    }
+                }
             }
         }
     }

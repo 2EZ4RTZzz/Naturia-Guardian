@@ -80,6 +80,20 @@ public class BuffDetails : MonoBehaviour
 
             SeedHandler(ID1, ID2, ID3, ID4, num1, num2, num3, num4);
         }
+        else if (itemID == 1004)
+        {
+            int ID1 = 1000;
+            int ID2 = 0;
+            int ID3 = 0;
+            int ID4 = 0;
+
+            int num1 = 4;
+            int num2 = 0;
+            int num3 = 0;
+            int num4 = 0;
+
+            SeedHandler(ID1, ID2, ID3, ID4, num1, num2, num3, num4);
+        }
         else SeedHandler(0, 0, 0, 0, 0, 0, 0, 0);
     }
 

@@ -10,7 +10,7 @@ public class CraftingTable : MonoBehaviour
     [SerializeField] private GameObject craftingTable;
     [SerializeField] private TextMeshProUGUI pageNoTxt;
     [SerializeField] private GameObject[] pageList;
-    [SerializeField] private GameObject[] craftingList1, craftingList2;
+    public GameObject[] craftingList1, craftingList2;
     [SerializeField] private GameObject buffDetails;
     private int pageNo, craftingListIndex;
     private bool canOpenCraftingTable;

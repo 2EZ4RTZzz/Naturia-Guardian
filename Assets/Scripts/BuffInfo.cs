@@ -14,18 +14,19 @@ public class BuffInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        itemDetails = InventoryManager.Instance.GetItemDetails(itemID);
-        icon.sprite = itemDetails.itemIcon;
-        buffName.text = itemDetails.name;
+        icon.gameObject.SetActive(false);
+        buffName.text = "???"; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (icon.sprite == null)
+        if (itemID != 0)
         {
-            icon.gameObject.SetActive(false);
-            buffName.text = "???";
-        }
+            icon.gameObject.SetActive(true);
+            itemDetails = InventoryManager.Instance.GetItemDetails(itemID);
+            icon.sprite = itemDetails.itemIcon;
+            buffName.text = itemDetails.name;
+        }    
     }
 }

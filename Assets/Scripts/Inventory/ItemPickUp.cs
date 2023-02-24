@@ -15,10 +15,12 @@ namespace Shameless.Inventory
         [SerializeField] private TextMeshProUGUI descriptionText;
         private bool isSelected = false;
         private GameObject[] craftingLst;
+        [SerializeField] private GameObject unlockRecipeDisplay;
 
         private void Update()
         {
             SelectBuff();
+            unlockRecipeDisplay.GetComponent<UnlockCraftingRecipe>().Display();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -91,8 +93,9 @@ namespace Shameless.Inventory
 
         private void UnlockRecipe(int ID)
         {
-            for (int i=0; i< 1; i++)
+            for (int i=0; i< 2; i++)
             {
+                bool breakLoop = false;
                 if (i == 0) craftingLst = GameObject.FindGameObjectWithTag("Player").GetComponent<CraftingTable>().craftingList1;
                 else if (i == 1) craftingLst = GameObject.FindGameObjectWithTag("Player").GetComponent<CraftingTable>().craftingList2;
 
@@ -101,9 +104,13 @@ namespace Shameless.Inventory
                     if (craftingLst[j].GetComponent<BuffInfo>().itemID == 0)
                     {
                         craftingLst[j].GetComponent<BuffInfo>().itemID = ID;
+                        unlockRecipeDisplay.GetComponent<UnlockCraftingRecipe>().displayTimer = 300;
+                        breakLoop = true;
                         break;
                     }
                 }
+
+                if (breakLoop) break;
             }
         }
     }

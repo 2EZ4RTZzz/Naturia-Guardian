@@ -32,7 +32,7 @@ MonoBehaviour:
     itemOnWorldSprite: {fileID: -41407249, guid: 4b6db0874b9ecd54e92fbc5ec5131a66, type: 3}
     itemDescription: Double Jump Recipe
     itemUseRadius: 0
-    canPickUp: 1
+    canPickUp: 0
     canTrade: 0
     canSynthesize: 0
     canActivate: 0

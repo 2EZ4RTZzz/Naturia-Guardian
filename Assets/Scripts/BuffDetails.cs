@@ -14,6 +14,8 @@ public class BuffDetails : MonoBehaviour
     [SerializeField] private GameObject seedTxt, confirmBtn;
     [SerializeField] private GameObject[] seedList;
     private int numInBag1=0, numInBag2=0, numInBag3=0, numInBag4=0;
+    private bool seedReady1 = false, seedReady2 = false, seedReady3 = false, seedReady4 = false;
+    private bool seedConsumed1 = false, seedConsumed2 = false, seedConsumed3 = false, seedConsumed4 = false;
     public InventoryBag_SO bag;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,7 @@ public class BuffDetails : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        craftingConfirmed();
     }
 
     /*
@@ -119,57 +121,128 @@ public class BuffDetails : MonoBehaviour
         {
             seedList[0].SetActive(true);
             seedList[0].GetComponent<Image>().sprite = seedDetails1.itemIcon;
-           
-            for (int i=0; i < bag.itemList.Count; i++)
+
+            for (int i = 0; i < bag.itemList.Count; i++)
             {
-                if (bag.itemList[i].itemID == ID1)  numInBag1 = bag.itemList[i].itemAmount;
+                if (bag.itemList[i].itemID == ID1) numInBag1 = bag.itemList[i].itemAmount;
+                if (seedConsumed1)
+                {
+                    int currentNum = bag.itemList[i].itemAmount - num1;
+                    var item = new InventoryItem { itemID = ID1, itemAmount = currentNum };
+                    bag.itemList[i] = item;
+                    seedConsumed1 = false;
+                }
             }
             seedList[0].GetComponentInChildren<TextMeshProUGUI>().text = numInBag1 + "/" + num1;
+            if (numInBag1 >= num1) seedReady1 = true;
+            else seedReady1 = false;
         }
-        else seedList[0].GetComponent<Image>().sprite = null;
+        else
+        {
+            seedReady1 = true;
+            seedList[0].GetComponent<Image>().sprite = null;
+        }
 
         if (ID2 != 0)
         {
             seedList[1].SetActive(true);
             seedList[1].GetComponent<Image>().sprite = seedDetails2.itemIcon;
-           
+
             for (int i = 0; i < bag.itemList.Count; i++)
             {
                 if (bag.itemList[i].itemID == ID2) numInBag2 = bag.itemList[i].itemAmount;
+                if (seedConsumed2)
+                {
+                    int currentNum = bag.itemList[i].itemAmount - num2;
+                    var item = new InventoryItem { itemID = ID2, itemAmount = currentNum };
+                    bag.itemList[i] = item;
+                    seedConsumed2 = false;
+                }
             }
             seedList[1].GetComponentInChildren<TextMeshProUGUI>().text = numInBag2 + "/" + num2;
+            if (numInBag2 >= num2) seedReady2 = true;
+            else seedReady2 = false;
         }
-        else seedList[1].GetComponent<Image>().sprite = null;
+        else
+        {
+            seedReady2 = true;
+            seedList[1].GetComponent<Image>().sprite = null;
+        }
 
         if (ID3 != 0)
         {
             seedList[2].SetActive(true);
             seedList[2].GetComponent<Image>().sprite = seedDetails3.itemIcon;
-           
+
             for (int i = 0; i < bag.itemList.Count; i++)
             {
                 if (bag.itemList[i].itemID == ID3) numInBag3 = bag.itemList[i].itemAmount;
+                if (seedConsumed3)
+                {
+                    int currentNum = bag.itemList[i].itemAmount - num3;
+                    var item = new InventoryItem { itemID = ID3, itemAmount = currentNum };
+                    bag.itemList[i] = item;
+                    seedConsumed3 = false;
+                }
             }
             seedList[2].GetComponentInChildren<TextMeshProUGUI>().text = numInBag3 + "/" + num3;
+            if (numInBag3 >= num3) seedReady3 = true;
+            else seedReady3 = false;
         }
-        else seedList[2].GetComponent<Image>().sprite = null;
+        else
+        {
+            seedReady3 = true;
+            seedList[2].GetComponent<Image>().sprite = null;
+        }
 
         if (ID4 != 0)
         {
             seedList[3].SetActive(true);
             seedList[3].GetComponent<Image>().sprite = seedDetails4.itemIcon;
-  
+
             for (int i = 0; i < bag.itemList.Count; i++)
             {
                 if (bag.itemList[i].itemID == ID4) numInBag4 = bag.itemList[i].itemAmount;
+                if (seedConsumed4)
+                {
+                    int currentNum = bag.itemList[i].itemAmount - num4;
+                    var item = new InventoryItem { itemID = ID4, itemAmount = currentNum };
+                    bag.itemList[i] = item;
+                    seedConsumed4 = false;
+                }
             }
             seedList[3].GetComponentInChildren<TextMeshProUGUI>().text = numInBag4 + "/" + num4;
+            if (numInBag4 >= num4) seedReady4 = true;
+            else seedReady4 = false;
         }
-        else seedList[3].GetComponent<Image>().sprite = null;
+        else
+        {
+            seedReady4 = true;
+            seedList[3].GetComponent<Image>().sprite = null;
+        }
 
         for (int i = 0; i < seedList.Length; i++)
         {
             if (seedList[i].GetComponent<Image>().sprite == null) seedList[i].SetActive(false);
+        }
+    }
+
+    public void craftingConfirmed()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            if (seedReady4 && seedReady3 && seedReady2 && seedReady1)
+            {
+                seedConsumed1 = true;
+                seedConsumed2 = true;
+                seedConsumed3 = true;
+                seedConsumed4 = true;
+                Debug.Log("done");
+            }
+            else
+            {
+                Debug.Log("not enough");
+            }
         }
     }
 }

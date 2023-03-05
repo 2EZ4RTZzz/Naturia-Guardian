@@ -30,6 +30,7 @@ public class CraftingTable : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.H))
             {
                 craftingTable.SetActive(true);
+                //buffDetails.GetComponent<BuffDetails>().craftingConfirmed();
             }
 
             if (Input.GetKeyDown(KeyCode.Escape))

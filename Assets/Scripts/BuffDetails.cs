@@ -16,6 +16,7 @@ public class BuffDetails : MonoBehaviour
     private int numInBag1=0, numInBag2=0, numInBag3=0, numInBag4=0;
     private bool seedReady1 = false, seedReady2 = false, seedReady3 = false, seedReady4 = false;
     private bool seedConsumed1 = false, seedConsumed2 = false, seedConsumed3 = false, seedConsumed4 = false;
+    private bool emptySeed1 = true, emptySeed2 = true, emptySeed3 = true, emptySeed4 = true;
     public InventoryBag_SO bag;
     // Start is called before the first frame update
     void Start()
@@ -119,6 +120,7 @@ public class BuffDetails : MonoBehaviour
 
         if (ID1 != 0)
         {
+            emptySeed1 = false;
             seedList[0].SetActive(true);
             seedList[0].GetComponent<Image>().sprite = seedDetails1.itemIcon;
 
@@ -139,12 +141,14 @@ public class BuffDetails : MonoBehaviour
         }
         else
         {
+            emptySeed1 = true;
             seedReady1 = true;
             seedList[0].GetComponent<Image>().sprite = null;
         }
 
         if (ID2 != 0)
         {
+            emptySeed2 = false;
             seedList[1].SetActive(true);
             seedList[1].GetComponent<Image>().sprite = seedDetails2.itemIcon;
 
@@ -165,12 +169,14 @@ public class BuffDetails : MonoBehaviour
         }
         else
         {
+            emptySeed2 = true;
             seedReady2 = true;
             seedList[1].GetComponent<Image>().sprite = null;
         }
 
         if (ID3 != 0)
         {
+            emptySeed3 = false;
             seedList[2].SetActive(true);
             seedList[2].GetComponent<Image>().sprite = seedDetails3.itemIcon;
 
@@ -191,12 +197,14 @@ public class BuffDetails : MonoBehaviour
         }
         else
         {
+            emptySeed3 = true;
             seedReady3 = true;
             seedList[2].GetComponent<Image>().sprite = null;
         }
 
         if (ID4 != 0)
         {
+            emptySeed4 = false;
             seedList[3].SetActive(true);
             seedList[3].GetComponent<Image>().sprite = seedDetails4.itemIcon;
 
@@ -217,6 +225,7 @@ public class BuffDetails : MonoBehaviour
         }
         else
         {
+            emptySeed4 = true;
             seedReady4 = true;
             seedList[3].GetComponent<Image>().sprite = null;
         }
@@ -225,13 +234,16 @@ public class BuffDetails : MonoBehaviour
         {
             if (seedList[i].GetComponent<Image>().sprite == null) seedList[i].SetActive(false);
         }
+
+        
     }
 
     public void craftingConfirmed()
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            if (seedReady4 && seedReady3 && seedReady2 && seedReady1)
+            if (seedReady4 && seedReady3 && seedReady2 && seedReady1 &&
+                (!emptySeed4 || !emptySeed3 || !emptySeed2 || !emptySeed1))
             {
                 seedConsumed1 = true;
                 seedConsumed2 = true;

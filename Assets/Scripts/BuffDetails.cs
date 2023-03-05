@@ -18,6 +18,8 @@ public class BuffDetails : MonoBehaviour
     private bool seedConsumed1 = false, seedConsumed2 = false, seedConsumed3 = false, seedConsumed4 = false;
     private bool emptySeed1 = true, emptySeed2 = true, emptySeed3 = true, emptySeed4 = true;
     public InventoryBag_SO bag;
+    public bool buffTreeGenerating = false;
+    //public GameObject buffTree;
     // Start is called before the first frame update
     void Start()
     {
@@ -249,6 +251,7 @@ public class BuffDetails : MonoBehaviour
                 seedConsumed2 = true;
                 seedConsumed3 = true;
                 seedConsumed4 = true;
+                buffTreeGenerating = true;
                 Debug.Log("done");
             }
             else

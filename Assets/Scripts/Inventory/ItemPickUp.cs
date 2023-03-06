@@ -40,12 +40,14 @@ namespace Shameless.Inventory
                     //buff的属性：canActivate
                     //检测当前item是否为buff
                     //如果是，打开buff选择面板
-                    if (item.itemDetails.canActivate || collision.gameObject.tag == "BuffTree")
+                    if (item.itemDetails.canActivate)
                     {
+                        buffInfo.SetActive(true);
+                        buffInfo.GetComponent<BuffInfo>().GetBuffID(item.itemDetails.itemID);
                         iconImage.sprite = item.itemDetails.itemIcon;
                         nameText.text = item.itemDetails.name;
                         descriptionText.text = item.itemDetails.itemDescription;
-                        buffInfo.SetActive(true);
+                        
                     }
 
                     if (item.itemDetails.canUse)
@@ -68,15 +70,23 @@ namespace Shameless.Inventory
 
         private void OnTriggerExit2D(Collider2D collision)
         {
+            if (collision.gameObject.tag != "BuffTree")
+            {
                 Item item = collision.GetComponent<Item>();
 
                 if (item != null)
                 {
-                    if (item.itemDetails.canActivate || collision.gameObject.tag == "BuffTree")
+                    if (item.itemDetails.canActivate)
                     {
-                        buffInfo.SetActive(false);
+                        buffInfo.SetActive(false); 
                     }
                 }
+            }
+            else
+            {
+                buffInfo.SetActive(false);
+                buffInfo.GetComponent<BuffInfo>().GetBuffID(0);
+            }
            
         }
 

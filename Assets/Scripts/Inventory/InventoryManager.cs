@@ -118,13 +118,13 @@ namespace Shameless.Inventory
                     }
                 }
             }
-            //else
-            //{
-            //    int currentAmount = buffState.buffList[index].itemAmount + amount;
-            //    var item = new InventoryItem { itemID = ID, itemAmount = currentAmount };
+            else
+            {
+                int currentAmount = buffState.buffList[index].itemAmount + amount;
+                var item = new InventoryItem { itemID = ID, itemAmount = currentAmount };
 
-            //    buffState.buffList[index] = item;
-            //}
+                buffState.buffList[index] = item;
+            }
         }
 
         private void InitializeGameData()

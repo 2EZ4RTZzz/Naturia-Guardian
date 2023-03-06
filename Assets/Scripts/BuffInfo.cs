@@ -11,6 +11,7 @@ public class BuffInfo : MonoBehaviour
     public ItemDetails itemDetails;
     [SerializeField] private Image icon;
     [SerializeField] private TextMeshProUGUI buffName;
+    [SerializeField] private TextMeshProUGUI buffDescription;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,15 @@ public class BuffInfo : MonoBehaviour
             itemDetails = InventoryManager.Instance.GetItemDetails(itemID);
             icon.sprite = itemDetails.itemIcon;
             buffName.text = itemDetails.name;
+            if (gameObject.CompareTag("BuffInfoPanel"))
+            {
+                buffDescription.text = itemDetails.itemDescription;
+            }
         }    
+    }
+
+    public void GetBuffID(int ID)
+    {
+        itemID = ID;
     }
 }

@@ -16,6 +16,7 @@ namespace Shameless.Inventory
         private bool isSelected = false;
         private GameObject[] craftingLst;
         [SerializeField] private GameObject unlockRecipeDisplay;
+        public GameObject prefabItem;
 
         private void Update()
         {
@@ -25,57 +26,68 @@ namespace Shameless.Inventory
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Item item = collision.GetComponent<Item>();
-
-            if (item != null)
+            if (collision.gameObject.tag != "BuffTree")
             {
-                if (item.itemDetails.canPickUp)
-                {
-                    InventoryManager.Instance.AddItem(item, true);
-                }
+                Item item = collision.GetComponent<Item>();
 
-                //buff的属性：canActivate
-                //检测当前item是否为buff
-                //如果是，打开buff选择面板
-                if (item.itemDetails.canActivate)
+                if (item != null)
                 {
-                    iconImage.sprite = item.itemDetails.itemIcon;
-                    nameText.text = item.itemDetails.name;
-                    descriptionText.text = item.itemDetails.itemDescription;
-                    buffInfo.SetActive(true);
-                }
-
-                if (item.itemDetails.canUse)
-                {
-                    if (item.itemID == 1001)
+                    if (item.itemDetails.canPickUp)
                     {
-                        UnlockRecipe(1004);
+                        InventoryManager.Instance.AddItem(item, true);
                     }
-                    Destroy(item.gameObject);
+
+                    //buff的属性：canActivate
+                    //检测当前item是否为buff
+                    //如果是，打开buff选择面板
+                    if (item.itemDetails.canActivate || collision.gameObject.tag == "BuffTree")
+                    {
+                        iconImage.sprite = item.itemDetails.itemIcon;
+                        nameText.text = item.itemDetails.name;
+                        descriptionText.text = item.itemDetails.itemDescription;
+                        buffInfo.SetActive(true);
+                    }
+
+                    if (item.itemDetails.canUse)
+                    {
+                        if (item.itemID == 1001)
+                        {
+                            UnlockRecipe(1004);
+                        }
+                        Destroy(item.gameObject);
+                    }
                 }
             }
+            else
+            {
+                buffInfo.SetActive(true);
+                buffInfo.GetComponent<BuffInfo>().GetBuffID(collision.gameObject.GetComponent<BuffTree>().buffID);
+            }
+            
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            Item item = collision.GetComponent<Item>();
+                Item item = collision.GetComponent<Item>();
 
-            if (item != null)
-            {
-                if (item.itemDetails.canActivate)
+                if (item != null)
                 {
-                    buffInfo.SetActive(false);
+                    if (item.itemDetails.canActivate || collision.gameObject.tag == "BuffTree")
+                    {
+                        buffInfo.SetActive(false);
+                    }
                 }
-            }
+           
         }
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            Item item = collision.GetComponent<Item>();
-            if (isSelected && item != null)
-            {
-                InventoryManager.Instance.ActivateBuff(item, true);
-            }
+                Item item = collision.GetComponent<Item>();
+                if (isSelected && item != null)
+                {
+                    InventoryManager.Instance.ActivateBuff(item, true);
+                }
+
         }
 
         private void SelectBuff()

@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
 
     public float Attack1finish=90;
+    [SerializeField] private GameObject buffInfo;
 
     
 

@@ -236,8 +236,6 @@ public class BuffDetails : MonoBehaviour
         {
             if (seedList[i].GetComponent<Image>().sprite == null) seedList[i].SetActive(false);
         }
-
-        
     }
 
     public void craftingConfirmed()
@@ -259,5 +257,10 @@ public class BuffDetails : MonoBehaviour
                 Debug.Log("not enough");
             }
         }
+    }
+
+    public int SetBuffID()
+    {
+        return itemID;
     }
 }

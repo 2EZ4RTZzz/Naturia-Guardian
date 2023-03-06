@@ -16,8 +16,11 @@ namespace Shameless.Inventory
 
         private void Awake()
         {
-            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-            coll = GetComponent<BoxCollider2D>();
+            if (!CompareTag("BuffTree"))
+            {
+                spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+                coll = GetComponent<BoxCollider2D>();
+            }
         }
 
         private void Start()

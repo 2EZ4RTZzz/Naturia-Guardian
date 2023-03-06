@@ -9,7 +9,7 @@ namespace Shameless.Inventory
     {
         [Header("Component Access")]
         [SerializeField] private Image buffImage;
-        //[SerializeField] private TextMeshProUGUI amountText;
+        [SerializeField] private TextMeshProUGUI amountText;
         //public Image slotHighlight;
         //[SerializeField] private Button button;
 
@@ -18,7 +18,7 @@ namespace Shameless.Inventory
         public bool isSelected;
         public int slotIndex;
         public ItemDetails itemDetails;
-        //public int itemAmount;
+        public int itemAmount;
 
         private InventoryUI inventoryUI => GetComponentInParent<InventoryUI>();
 
@@ -32,14 +32,14 @@ namespace Shameless.Inventory
             }
         }
 
-        public void UpdateSlot(ItemDetails item)
+        public void UpdateSlot(ItemDetails item, int amount)
         {
             itemDetails = item;
             buffImage.sprite = item.itemIcon;
-            //itemAmount = amount;
-            //amountText.text = amount.ToString();
+            itemAmount = amount;
+            amountText.text = amount.ToString();
             buffImage.enabled = true;
-            //amountText.enabled = true;
+            amountText.enabled = true;
             //button.interactable = true;
         }
 
@@ -51,8 +51,8 @@ namespace Shameless.Inventory
             }
 
             buffImage.enabled = false;
-            //amountText.enabled = false;
-            //amountText.text = string.Empty;
+            amountText.enabled = false;
+            amountText.text = string.Empty;
             //button.interactable = false;
         }
 

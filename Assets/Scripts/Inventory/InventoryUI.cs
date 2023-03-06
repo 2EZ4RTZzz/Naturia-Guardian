@@ -88,7 +88,7 @@ namespace Shameless.Inventory
                         if (list[i].itemAmount > 0)
                         {
                             var item = InventoryManager.Instance.GetItemDetails(list[i].itemID);
-                            playerBuffs[i].UpdateSlot(item);
+                            playerBuffs[i].UpdateSlot(item, list[i].itemAmount);
                         }
                         else
                         {

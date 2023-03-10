@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public Animator anim;
+    private Rigidbody2D rb;
+    private Animator anim;
     //玩家的碰撞方框（可以是胶囊也可以是正方形）
     public Collider2D coll;
     public Collider2D DisColl;
@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
 
     //判断伤害
 
-    public bool isHurt;  //默认是False
-    public bool isCrouching;
+    private bool isHurt;  //默认是False
+    private bool isCrouching;
     public bool isCrafting;
     public bool bagOpening;
 
@@ -196,7 +196,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // 下蹲 crouching 
-    public void Crouch()
+    private void Crouch()
     {
         //顶头 ， 如果钻进去，不能让他站立！
         if (Input.GetButtonDown("Crouch"))

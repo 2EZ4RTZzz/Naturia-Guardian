@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private Animator anim;
+    public Rigidbody2D rb;
+    public Animator anim;
     //玩家的碰撞方框（可以是胶囊也可以是正方形）
     public Collider2D coll;
     public Collider2D DisColl;
@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour
 
     //判断伤害
 
-    private bool isHurt;  //默认是False
-    private bool isCrouching;
+    public bool isHurt;  //默认是False
+    public bool isCrouching;
     public bool isCrafting;
     public bool bagOpening;
 
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     public int Cherry = 0;
 
     //后退速度
-    private float backSpeed=5;
+    public float backSpeed=5;
 
     //jump sound
     public AudioSource jumpAudio;
@@ -78,17 +78,18 @@ public class PlayerController : MonoBehaviour
         //     Attack1_Coll.enabled=false;
         // }
     }
-    
+
     //move
-    void Movement() 
+    void Movement()
     {
         Crouch();
         float horizontalmove = Input.GetAxisRaw("Horizontal");  //get -1 , 0 , 1 if 1 right , -1 left
         //左右移动 !!!有bug 施法的时候不应该移动的
-        if(!anim.GetBool("attack_3")){
+        if (!anim.GetBool("attack_3"))
+        {
             rb.velocity = new Vector2(horizontalmove * speed, rb.velocity.y);
         }
-        
+
         if (!isCrouching) anim.SetFloat("running", Mathf.Abs(horizontalmove));
         //Time.deltaTime 乘以物理时钟的百分比 ， 所以在运行中 会变得平滑不跳帧数
         //rb.velocity = new Vector2(horizontalmove*speed,rb.velocity.y);
@@ -113,13 +114,13 @@ public class PlayerController : MonoBehaviour
 
     void attack_2()
     {
-        if(Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K))
         {
-            anim.SetBool("attack_2",true);
+            anim.SetBool("attack_2", true);
         }
     }
 
-        void attack_3()
+    void attack_3()
     {
         if(Input.GetKeyDown(KeyCode.L))
         {
@@ -195,7 +196,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // 下蹲 crouching 
-    void Crouch()
+    public void Crouch()
     {
         //顶头 ， 如果钻进去，不能让他站立！
         if (Input.GetButtonDown("Crouch"))

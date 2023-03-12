@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int health;
+    //public int health;
+    private PlayerAttributes playerAttr;
 
     //blink times
     public int Blinks;
@@ -27,12 +28,13 @@ public class PlayerHealth : MonoBehaviour
     
     void Start()
     {
+        playerAttr = gameObject.transform.GetComponentInParent<PlayerAttributes>();
         myRender = GetComponent<Renderer>();
         polygonCollider2D = GetComponent<PolygonCollider2D>();
         anim = GetComponent<Animator>();
         //set the hp
-        HealthBar.HealthMax= health;
-        HealthBar.HealthCurrent= health;
+        //HealthBar.HealthMax= health;
+        //HealthBar.HealthCurrent= health;
     }
 
     // Update is called once per frame
@@ -45,19 +47,16 @@ public class PlayerHealth : MonoBehaviour
     public void DamagePlayer(int damage)
     {
         //relate to the HP bar
-        health -= damage;
-        if(health < 0)
+        playerAttr.currentHP -= damage*(1-playerAttr.def/100.0f);
+        if(playerAttr.currentHP <= 0)
         {
             //GG!!!!!! 2023-02-14-3:21 AM FUCKING AM!!!
-            health=0;
-        }
-        HealthBar.HealthCurrent = health;
-
-        if(health <=0)
-        {
+            playerAttr.currentHP = 0;
             anim.SetTrigger("die");
-            Invoke("playerDead",dieTime);
+            Invoke("playerDead", dieTime);
         }
+        //HealthBar.HealthCurrent = health;
+
         BlinkPlayer(Blinks,time);
         polygonCollider2D.enabled=false;
         StartCoroutine(ShowPlayerPolyHitBox());
@@ -65,7 +64,7 @@ public class PlayerHealth : MonoBehaviour
     IEnumerator ShowPlayerPolyHitBox()
     {
         yield return new WaitForSeconds(hitBoxCDTime);
-        if(health > 0)
+        if(playerAttr.currentHP > 0)
         {
             polygonCollider2D.enabled = true;
         }

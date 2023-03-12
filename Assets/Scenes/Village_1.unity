@@ -5939,6 +5939,7 @@ MonoBehaviour:
   flashTime: 0.2
   bloodEffect: {fileID: 0}
   floatPoint: {fileID: 0}
+  itemPrefab: {fileID: 0}
   speed: 2
   startWaitTime: 1
   movePos: {fileID: 697844695}
@@ -6590,6 +6591,10 @@ PrefabInstance:
       propertyPath: health
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4586900973255902483, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
+      propertyPath: itemPrefab
+      value: 
+      objectReference: {fileID: 4928596094817364230, guid: b978fca423e0ea348b677d19c5cf5605, type: 3}
     - target: {fileID: 4586900973255902493, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
       propertyPath: m_Name
       value: Frog(Jungle)
@@ -7472,6 +7477,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4586900973255902483, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
+      propertyPath: itemPrefab
+      value: 
+      objectReference: {fileID: 4928596094817364230, guid: b978fca423e0ea348b677d19c5cf5605, type: 3}
     - target: {fileID: 4586900973255902483, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
       propertyPath: Ground.m_Bits
       value: 8
@@ -9627,6 +9636,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4586900973255902483, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
+      propertyPath: itemPrefab
+      value: 
+      objectReference: {fileID: 4928596094817364230, guid: b978fca423e0ea348b677d19c5cf5605, type: 3}
     - target: {fileID: 4586900973255902493, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
       propertyPath: m_Name
       value: Frog (1)
@@ -11309,6 +11322,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4586900973255902483, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
+      propertyPath: itemPrefab
+      value: 
+      objectReference: {fileID: 4928596094817364230, guid: b978fca423e0ea348b677d19c5cf5605, type: 3}
     - target: {fileID: 4586900973255902483, guid: 5255bc2e9b982974c861b0c542c57c46, type: 3}
       propertyPath: Ground.m_Bits
       value: 8

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Shameless.Inventory;
 
 //super class
 public class Enemy : MonoBehaviour
@@ -29,6 +30,8 @@ public class Enemy : MonoBehaviour
     //death boolean 
     private bool isDeath=false;
     private float countDown = 30;
+
+    public GameObject itemPrefab;
 
 
     // Start is called before the first frame update
@@ -81,6 +84,9 @@ public class Enemy : MonoBehaviour
             //add a time count down for 1-2 secs********************************************
             GetAttack();
             isDeath=true;
+
+            itemPrefab.GetComponent<Item>().itemID = 1000;
+            Instantiate(itemPrefab, transform.position, Quaternion.identity);
         }
         FlashColor(flashTime);
         //bloodeffect for 1sec

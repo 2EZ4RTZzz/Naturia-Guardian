@@ -9,6 +9,7 @@ TagManager:
   - MeltIce
   - CraftingTable
   - BuffTree
+  - BuffInfoPanel
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Airwall
   - BackgroundPlants
   - Spike
-  - 
+  - Player
   - 
   - 
   - 

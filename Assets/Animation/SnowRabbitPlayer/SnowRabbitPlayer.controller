@@ -601,7 +601,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Fire_Attack_2
+  m_Name: SnowRabbit_Attack_2
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -616,7 +616,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5aeb3c877a01b2b42a7439780d41e25f, type: 2}
+  m_Motion: {fileID: 7400000, guid: 91677c2f914c9a74a8d34c81b0648924, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

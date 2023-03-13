@@ -9,7 +9,7 @@ public class ArrowHit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,8 +22,9 @@ public class ArrowHit : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
+            anim.SetTrigger("attack_1");
             Shoot();
-            Debug.Log("test123");
+            //Debug.Log("test123");
             // anim.SetTrigger("attack_1");
             // StartCoroutine(StartAttack());
         }

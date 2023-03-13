@@ -75,6 +75,11 @@ public class FireRabbitAttack1 : MonoBehaviour
             scale.y -= 0.1f;
             scale.z -= 0.1f;
             other.gameObject.transform.localScale = scale;
+            if (other.gameObject.transform.localScale.x < 2.0f)
+            {
+                Debug.Log("destroy");
+                Destroy(other.gameObject);
+            }
             
         }
     }

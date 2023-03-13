@@ -65,6 +65,11 @@ public class PlayerController : MonoBehaviour
         {
             Movement();
         }
+
+        if (isCrafting)
+        {
+            rb.velocity = new Vector2(0,0);
+        }
         SwitchAnim();
         attack_2();
         attack_3();

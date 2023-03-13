@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5260069617022465585}
   - component: {fileID: 5260069617022465590}
   - component: {fileID: 5260069617022465591}
+  - component: {fileID: 7008402871648291472}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1212281535
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ae76ef495c5e9b54ab41658078c56501, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -135,10 +136,14 @@ MonoBehaviour:
     m_Bits: 8
   CellingCheck: {fileID: 5260069618551361868}
   CherryNum: {fileID: 0}
+  isCrafting: 0
+  bagOpening: 0
   Cherry: 0
+  backSpeed: 5
   jumpAudio: {fileID: 0}
   pickUpAudio: {fileID: 0}
   Attack1finish: 90
+  buffInfo: {fileID: 0}
 --- !u!114 &1776637082792359146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +156,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e25850863816435e8fc8e208686849a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buffInfo: {fileID: 0}
+  iconImage: {fileID: 0}
+  nameText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  unlockRecipeDisplay: {fileID: 0}
+  prefabItem: {fileID: 0}
 --- !u!95 &5260069617022465584
 Animator:
   serializedVersion: 5
@@ -299,6 +310,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7008402871648291472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260069617022465582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160c3354d9859c941a895f07beec25ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 5612778935792281358, guid: 927e1d8ee4ea055479b19b499081feef, type: 3}
 --- !u!1 &5260069618551361869
 GameObject:
   m_ObjectHideFlags: 0

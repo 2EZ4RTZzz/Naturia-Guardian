@@ -10,13 +10,17 @@ public class Arrow : MonoBehaviour
 
     private Rigidbody2D rb2d;
     private Vector3 startPos;
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("SnowRabbit");
         rb2d = GetComponent<Rigidbody2D>();
-        rb2d.velocity = transform.right * speed;
+        if (player.transform.localScale.x > 0) rb2d.velocity = transform.right * speed;
+        if (player.transform.localScale.x < 0) rb2d.velocity = transform.right * -speed;
         startPos = transform.position;
+        transform.localScale = new Vector3(player.transform.localScale.x,1,1);
 
     }
 

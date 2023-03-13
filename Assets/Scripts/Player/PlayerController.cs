@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     public int Cherry = 0;
 
     //后退速度
-    public float backSpeed=5;
+    public float backSpeed=3;
 
     //jump sound
     public AudioSource jumpAudio;

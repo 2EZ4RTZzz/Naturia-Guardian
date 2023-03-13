@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour
             isDeath=true;
 
             itemPrefab.GetComponent<Item>().itemID = 1000;
-            Instantiate(itemPrefab, transform.position, Quaternion.identity);
+            if (UnityEngine.Random.value > 0.5) Instantiate(itemPrefab, transform.position, Quaternion.identity);
         }
         FlashColor(flashTime);
         //bloodeffect for 1sec

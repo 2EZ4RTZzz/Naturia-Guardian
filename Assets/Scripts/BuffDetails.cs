@@ -61,9 +61,23 @@ public class BuffDetails : MonoBehaviour
         }
     
 
-        if (itemID == 1002)
+        if (itemID == 1010)
         {
-            int ID1 = 1000;
+            int ID1 = 1001;
+            int ID2 = 1002;
+            int ID3 = 0;
+            int ID4 = 0;
+
+            int num1 = 2;
+            int num2 = 1;
+            int num3 = 0;
+            int num4 = 0;
+
+            SeedHandler(ID1, ID2, ID3, ID4, num1, num2, num3, num4);
+        }
+        else if (itemID == 1011)
+        {
+            int ID1 = 1001;
             int ID2 = 0;
             int ID3 = 0;
             int ID4 = 0;
@@ -75,28 +89,42 @@ public class BuffDetails : MonoBehaviour
 
             SeedHandler(ID1, ID2, ID3, ID4, num1, num2, num3, num4);
         }
-        else if (itemID == 1003)
+        else if (itemID == 1012)
         {
-            int ID1 = 1000;
+            int ID1 = 1003;
             int ID2 = 0;
             int ID3 = 0;
             int ID4 = 0;
 
-            int num1 = 2;
+            int num1 = 3;
             int num2 = 0;
             int num3 = 0;
             int num4 = 0;
 
             SeedHandler(ID1, ID2, ID3, ID4, num1, num2, num3, num4);
         }
-        else if (itemID == 1004)
+        else if (itemID == 1013)
         {
-            int ID1 = 1000;
+            int ID1 = 1002;
+            int ID2 = 1003;
+            int ID3 = 0;
+            int ID4 = 0;
+
+            int num1 = 1;
+            int num2 = 2;
+            int num3 = 0;
+            int num4 = 0;
+
+            SeedHandler(ID1, ID2, ID3, ID4, num1, num2, num3, num4);
+        }
+        else if (itemID == 1014)
+        {
+            int ID1 = 1002;
             int ID2 = 0;
             int ID3 = 0;
             int ID4 = 0;
 
-            int num1 = 4;
+            int num1 = 3;
             int num2 = 0;
             int num3 = 0;
             int num4 = 0;

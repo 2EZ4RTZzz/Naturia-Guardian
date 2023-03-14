@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Shameless.Inventory;
 
 public class BeachBossScript : Enemy
 {
@@ -47,6 +48,8 @@ public class BeachBossScript : Enemy
     void CheckDeath(){
         if(health<=0){
             Destroy(gameObject);
+            itemPrefab.GetComponent<Item>().itemID = 1020;
+            Instantiate(itemPrefab, transform.position, Quaternion.identity);
         }
     }
 

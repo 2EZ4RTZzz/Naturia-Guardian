@@ -52,9 +52,10 @@ namespace Shameless.Inventory
 
                     if (item.itemDetails.canUse)
                     {
-                        if (item.itemID == 1001)
+                        if (item.itemID == 1020)
                         {
-                            UnlockRecipe(1004);
+                            UnlockRecipe(1015);
+                            UnlockRecipe(1016);
                         }
                         Destroy(item.gameObject);
                     }

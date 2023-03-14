@@ -24,6 +24,7 @@ public class BeachBossScript : Enemy
     // Update is called once per frame
     public void Update()
     {
+        CheckDeath();
         //调用父类的Update()方法
         base.update();
 
@@ -40,6 +41,12 @@ public class BeachBossScript : Enemy
             {
                 waitTime -= Time.deltaTime;
             }
+        }
+    }
+
+    void CheckDeath(){
+        if(health<=0){
+            Destroy(gameObject);
         }
     }
 

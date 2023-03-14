@@ -1790,7 +1790,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -805493137
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -6043,7 +6043,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -805493137
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -10651,7 +10651,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1157027031
-  m_SortingLayer: 0
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -1737726588, guid: 505902c6b8003d546bf4db4b93508203, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10694,7 +10694,7 @@ MonoBehaviour:
   health: 10
   damage: 5
   flashTime: 0
-  bloodEffect: {fileID: 1887494298}
+  bloodEffect: {fileID: 0}
   floatPoint: {fileID: 5915434104370894641, guid: 6dbc291268f2a1a4288b6480d12cb75a, type: 3}
   itemPrefab: {fileID: 4928596094817364230, guid: b978fca423e0ea348b677d19c5cf5605, type: 3}
   speed: 5
@@ -11970,7 +11970,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -805493137
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -15824,7 +15824,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -805493137
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ecc204495234d40f091d828790c56287, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -16353,11 +16353,6 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3314267095454511110, guid: fa1fc49dd37c3724199882116ba719d2, type: 3}
   m_PrefabInstance: {fileID: 3314267095612737950}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1887494298 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8383907722563070735, guid: 9bfa77145aa896b40830ea838a6b4f4b, type: 3}
-  m_PrefabInstance: {fileID: 8383907721131585279}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1888143226
 GameObject:
@@ -23256,11 +23251,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4385721430538911429, guid: 7d53efea4815893458295d87bb1177bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.881073
+      value: 0.00095558167
       objectReference: {fileID: 0}
     - target: {fileID: 4385721430538911429, guid: 7d53efea4815893458295d87bb1177bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.181495
+      value: -5.268508
       objectReference: {fileID: 0}
     - target: {fileID: 4385721430538911430, guid: 7d53efea4815893458295d87bb1177bd, type: 3}
       propertyPath: m_Follow
@@ -23276,11 +23271,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4385721431271223824, guid: 7d53efea4815893458295d87bb1177bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -46.958927
+      value: -28.740953
       objectReference: {fileID: 0}
     - target: {fileID: 4385721431271223824, guid: 7d53efea4815893458295d87bb1177bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.078505754
+      value: 0.078508854
       objectReference: {fileID: 0}
     - target: {fileID: 4385721431271223824, guid: 7d53efea4815893458295d87bb1177bd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23731,11 +23726,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7469406885700488109, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 52.06
+      value: 80.16
       objectReference: {fileID: 0}
     - target: {fileID: 7469406885700488109, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.04
+      value: -9.49
       objectReference: {fileID: 0}
     - target: {fileID: 7469406885700488109, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23775,7 +23770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7469406885700488110, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
       propertyPath: healDuration
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7469406886075374592, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
       propertyPath: pageNoTxt

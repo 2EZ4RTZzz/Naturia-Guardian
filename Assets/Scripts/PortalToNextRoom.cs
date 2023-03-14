@@ -24,6 +24,7 @@ public class PortalToNextRoom : MonoBehaviour
         if(other.gameObject.CompareTag("Player")
          && other.GetType().ToString() == "UnityEngine.CapsuleCollider2D")
          {
+            Debug.Log("123");
             //port to the next room, get current level and increase one to the next.
             // buildIndex in the file->buildSetting
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);

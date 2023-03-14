@@ -2613,6 +2613,71 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3314267095701296786, guid: fa1fc49dd37c3724199882116ba719d2, type: 3}
   m_PrefabInstance: {fileID: 1431942364}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1235307607
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2811123695873506339, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123695873506339, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 35.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123695873506339, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123695873506339, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123695873506339, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123695873506339, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123695873506339, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123695873506339, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123695873506339, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123695873506339, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123695873506339, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123695873506524, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123695873506524, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1396772065
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123695873506527, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_Name
+      value: Tutorial_controller
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
 --- !u!4 &1295778493 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3411244233281692333, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
@@ -3427,6 +3492,21 @@ PrefabInstance:
     - target: {fileID: 2811123695873506527, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
       propertyPath: m_Name
       value: Tutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123697208271334, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_text
+      value: 'No time to waste, hurry up and eliminate those vile enemies.
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123697369695189, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_text
+      value: "The Earth is polluted, and monsters are damaging the ecosystem. \n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811123697818336402, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}
+      propertyPath: m_text
+      value: 'As a Naturia Guard, Rabi (you) has the ability to switch between three
+        attributes: Flame, Frost, and Sheen. '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 839d4f5f23362ef4fa67a8fee90f214c, type: 3}

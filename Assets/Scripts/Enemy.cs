@@ -97,14 +97,14 @@ public class Enemy : MonoBehaviour
     //can be used from other class cause is open public
     public void JumpOn()
     {
-        deathAudio.Play();
+        //deathAudio.Play();
         anim.SetTrigger("death");
     }
 
 
     public void GetAttack()
     {
-        deathAudio.Play();
+        //deathAudio.Play();
         // Debug.Log("123");
         anim.SetTrigger("death");
     }

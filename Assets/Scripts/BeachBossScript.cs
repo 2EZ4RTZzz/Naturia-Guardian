@@ -13,7 +13,8 @@ public class BeachBossScript : Enemy
     public Transform rightUpPos;
 
     // Start is called before the first frame update
-    void Start()
+
+    protected override void Start()
     {
         base.Start();
         waitTime = startWaitTime;
@@ -21,7 +22,7 @@ public class BeachBossScript : Enemy
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         //调用父类的Update()方法
         base.update();

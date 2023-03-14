@@ -143,8 +143,8 @@ MonoBehaviour:
     canPickUp: 0
     canTrade: 0
     canSynthesize: 0
-    canActivate: 0
-    canUse: 1
+    canActivate: 1
+    canUse: 0
   - itemID: 1011
     name: ATK UP
     itemType: 3
@@ -155,8 +155,8 @@ MonoBehaviour:
     canPickUp: 0
     canTrade: 0
     canSynthesize: 0
-    canActivate: 0
-    canUse: 1
+    canActivate: 1
+    canUse: 0
   - itemID: 1012
     name: DEF UP
     itemType: 3
@@ -167,8 +167,8 @@ MonoBehaviour:
     canPickUp: 0
     canTrade: 0
     canSynthesize: 0
-    canActivate: 0
-    canUse: 1
+    canActivate: 1
+    canUse: 0
   - itemID: 1013
     name: HP UP
     itemType: 3
@@ -179,14 +179,50 @@ MonoBehaviour:
     canPickUp: 0
     canTrade: 0
     canSynthesize: 0
-    canActivate: 0
-    canUse: 1
+    canActivate: 1
+    canUse: 0
   - itemID: 1014
     name: SP UP
     itemType: 3
     itemIcon: {fileID: -128628240, guid: 6bc856fcd8b444e4f83e9df3016e3afb, type: 3}
     itemOnWorldSprite: {fileID: -128628240, guid: 6bc856fcd8b444e4f83e9df3016e3afb, type: 3}
     itemDescription: SP UP 20
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 1
+    canUse: 0
+  - itemID: 1015
+    name: Heal UP
+    itemType: 3
+    itemIcon: {fileID: 674101538, guid: 6bc856fcd8b444e4f83e9df3016e3afb, type: 3}
+    itemOnWorldSprite: {fileID: 674101538, guid: 6bc856fcd8b444e4f83e9df3016e3afb, type: 3}
+    itemDescription: Heal UP 2HP/10s
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 1
+    canUse: 0
+  - itemID: 1016
+    name: Speed UP
+    itemType: 3
+    itemIcon: {fileID: 1526588197, guid: 6bc856fcd8b444e4f83e9df3016e3afb, type: 3}
+    itemOnWorldSprite: {fileID: 1526588197, guid: 6bc856fcd8b444e4f83e9df3016e3afb, type: 3}
+    itemDescription: Speed UP
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 1
+    canUse: 0
+  - itemID: 1020
+    name: Recipe 1
+    itemType: 2
+    itemIcon: {fileID: -750292128, guid: 4b6db0874b9ecd54e92fbc5ec5131a66, type: 3}
+    itemOnWorldSprite: {fileID: -750292128, guid: 4b6db0874b9ecd54e92fbc5ec5131a66, type: 3}
+    itemDescription: Recipe 1
     itemUseRadius: 0
     canPickUp: 0
     canTrade: 0

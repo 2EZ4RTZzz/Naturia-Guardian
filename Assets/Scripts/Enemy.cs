@@ -84,8 +84,8 @@ public class Enemy : MonoBehaviour
             //add a time count down for 1-2 secs********************************************
             GetAttack();
             isDeath=true;
-
-            itemPrefab.GetComponent<Item>().itemID = 1000;
+            
+            itemPrefab.GetComponent<Item>().itemID = (int)Random.Range(1001,1004);
             if (UnityEngine.Random.value > 0.5) Instantiate(itemPrefab, transform.position, Quaternion.identity);
         }
         FlashColor(flashTime);

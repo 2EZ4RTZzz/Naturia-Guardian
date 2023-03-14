@@ -56,11 +56,11 @@ TagManager:
   - name: Player
     uniqueID: 1396772065
     locked: 0
-  - name: Item
-    uniqueID: 973081531
-    locked: 0
   - name: Frontground
     uniqueID: 3082685761
+    locked: 0
+  - name: Item
+    uniqueID: 973081531
     locked: 0
   - name: Ground
     uniqueID: 3489474159

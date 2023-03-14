@@ -5628,6 +5628,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3314267095349364700, guid: fa1fc49dd37c3724199882116ba719d2, type: 3}
   m_PrefabInstance: {fileID: 3314267095612737950}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &301020416 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3411244231187395298, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
+  m_PrefabInstance: {fileID: 7469406884909827304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &301090410 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3314267095351496692, guid: fa1fc49dd37c3724199882116ba719d2, type: 3}
@@ -14971,6 +14976,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7469406885326438563, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
   m_PrefabInstance: {fileID: 7469406884909827304}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1800733786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800733771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c399bd20be8f274ba126d67bbd436fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  time: 0
+  StartTime: 0
+  buffState: {fileID: 11400000, guid: 75541cc4949cd44ab88b64bc86e547e7, type: 2}
+  fireBuff_1: 0
 --- !u!114 &1802520757 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3314267097138397483, guid: fa1fc49dd37c3724199882116ba719d2, type: 3}
@@ -18021,6 +18043,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5484945492747063559, guid: fa1fc49dd37c3724199882116ba719d2, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 1800733771}
+    - target: {fileID: 5484945492747063559, guid: fa1fc49dd37c3724199882116ba719d2, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 301020416}
+    - target: {fileID: 5484945492747063559, guid: fa1fc49dd37c3724199882116ba719d2, type: 3}
+      propertyPath: skillDataList
+      value: 
+      objectReference: {fileID: 11400000, guid: f8132e9f5f6e149e4bd0b22ecc02c5ec, type: 2}
     - target: {fileID: 6131960235690737526, guid: fa1fc49dd37c3724199882116ba719d2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -18601,6 +18635,10 @@ PrefabInstance:
       propertyPath: unlockRecipeDisplay
       value: 
       objectReference: {fileID: 1053417228}
+    - target: {fileID: 5626673556824996893, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7469406884002802757, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6abc523a50d9d47ad97596bbd397b5fe, type: 3}
+  m_Name: SkillDataList_SO
+  m_EditorClassIdentifier: 
+  fireRabbitSkills:
+  - skillName: J
+    skillIcon: {fileID: 21300000, guid: 94711770c51ad5947adc99765863a77f, type: 3}
+    cd: 0
+    mp: 0
+    dmgFactor: 1
+  - skillName: K
+    skillIcon: {fileID: 21300000, guid: 56b2d645e391b5a408e904318f50dc24, type: 3}
+    cd: 0
+    mp: 0
+    dmgFactor: 1
+  - skillName: L
+    skillIcon: {fileID: 21300000, guid: 9e70fdab75ddf8f499fd1775d70e4076, type: 3}
+    cd: 0
+    mp: 0
+    dmgFactor: 1
+  iceRabbitSkills:
+  - skillName: 
+    skillIcon: {fileID: 0}
+    cd: 0
+    mp: 0
+    dmgFactor: 0
+  - skillName: 
+    skillIcon: {fileID: 0}
+    cd: 0
+    mp: 0
+    dmgFactor: 0
+  - skillName: 
+    skillIcon: {fileID: 0}
+    cd: 0
+    mp: 0
+    dmgFactor: 0

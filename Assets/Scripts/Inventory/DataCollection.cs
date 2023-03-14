@@ -41,3 +41,14 @@ public struct InventoryItem
 
     public int itemAmount;
 }
+
+[System.Serializable]
+public class SkillDetails
+{
+    public string skillName;
+    public Sprite skillIcon;
+    public float cd;
+    public int mp;
+    public float dmgFactor;
+    private float dmg;
+}

@@ -89,7 +89,7 @@ public class FireRabbitAttack1 : MonoBehaviour
         for (int i = 0; i < buffState.buffList.Count; i++)
         {
             var id = buffState.buffList[i].itemID;
-            if (id == 1002) fireBuff_1 = true;
+            if (id == 1000) fireBuff_1 = true;
         }
     }
 

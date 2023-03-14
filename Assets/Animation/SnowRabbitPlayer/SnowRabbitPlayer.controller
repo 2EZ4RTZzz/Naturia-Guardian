@@ -470,7 +470,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: crouch
+  m_Name: SnowRabbitCrouch
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -484,7 +484,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ece8afa96e6f7aa42aba903ee43031c0, type: 2}
+  m_Motion: {fileID: 7400000, guid: 85f41cf0941feff4180c262a9cd8e5d5, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -513,7 +513,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e18c7082af4390d489d51d301728424a, type: 2}
+  m_Motion: {fileID: 7400000, guid: b4c97121a65bb9e4bba41eeaee62dd89, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -883,7 +883,7 @@ AnimatorStateMachine:
     m_Position: {x: 690, y: 140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4216415237599724210}
-    m_Position: {x: 300, y: 260, z: 0}
+    m_Position: {x: 290, y: 260, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6810310554284034917}
     m_Position: {x: 980, y: -150, z: 0}
@@ -1008,7 +1008,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 661553a12c5e4774dbf6169b1fd74fc1, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9c8808fd53dcb5042b6ef19040dfe307, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

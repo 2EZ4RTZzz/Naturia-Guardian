@@ -29,18 +29,18 @@ MonoBehaviour:
     mp: 0
     dmgFactor: 1
   iceRabbitSkills:
-  - skillName: 
-    skillIcon: {fileID: 0}
+  - skillName: SingleArrow
+    skillIcon: {fileID: 1642083452, guid: 1384df3524e551f4eb15b84652378f9b, type: 3}
     cd: 0
     mp: 0
     dmgFactor: 0
-  - skillName: 
-    skillIcon: {fileID: 0}
+  - skillName: SkyArrow
+    skillIcon: {fileID: -1116456208, guid: 1384df3524e551f4eb15b84652378f9b, type: 3}
     cd: 0
     mp: 0
     dmgFactor: 0
-  - skillName: 
-    skillIcon: {fileID: 0}
+  - skillName: Frozzeee
+    skillIcon: {fileID: -1033457858, guid: 1384df3524e551f4eb15b84652378f9b, type: 3}
     cd: 0
     mp: 0
     dmgFactor: 0

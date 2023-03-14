@@ -14,9 +14,10 @@ public class Enemy_Eagle : Enemy
 
     private bool isUp = true;
 
-    public GameObject player;
+    //public GameObject player;
 
     //chase player
+    public Transform player1, player2, player3;
     Transform target;
     Vector2 moveDirection;
 
@@ -39,14 +40,18 @@ public class Enemy_Eagle : Enemy
         Destroy(top.gameObject);
         Destroy(bottom.gameObject);
         //catch the player pos.
-        target = GameObject.Find("player").transform;
+        //target = GameObject.Find("player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (player1.gameObject.activeSelf) target = player1;
+        if (player2.gameObject.activeSelf) target = player2;
+        if (player3.gameObject.activeSelf) target = player3;
         Movement();
         checkPlayerLocation();
+        
     }
 
     void Movement()

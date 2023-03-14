@@ -24717,6 +24717,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7469406884909827305}
     - target: {fileID: 8486718236324844027, guid: d7b6d8bfd75ae04419ce0e5721f66500, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 399326680}
+    - target: {fileID: 8486718236324844027, guid: d7b6d8bfd75ae04419ce0e5721f66500, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 1183406311}
+    - target: {fileID: 8486718236324844027, guid: d7b6d8bfd75ae04419ce0e5721f66500, type: 3}
+      propertyPath: player3
+      value: 
+      objectReference: {fileID: 479259473}
+    - target: {fileID: 8486718236324844027, guid: d7b6d8bfd75ae04419ce0e5721f66500, type: 3}
       propertyPath: flashTime
       value: 0.3
       objectReference: {fileID: 0}

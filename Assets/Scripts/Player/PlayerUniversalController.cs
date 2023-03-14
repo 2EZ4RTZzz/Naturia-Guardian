@@ -5,17 +5,24 @@ using UnityEngine;
 public class PlayerUniversalController : MonoBehaviour
 {
     private GameObject currentPlayer;
+    public float healDuration;
+    public int healAmount;
+    [SerializeField] private float healTimer;
+    private PlayerAttributes playerAttr;
 
     // Start is called before the first frame update
     void Start()
     {
         currentPlayer = this.transform.GetChild(0).gameObject;
+        playerAttr = GetComponent<PlayerAttributes>();
+        healTimer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         SwitchPlayer();
+        autoHeal();
     }
 
     private void SwitchPlayer()
@@ -51,5 +58,13 @@ public class PlayerUniversalController : MonoBehaviour
         }
     }
 
-    
+    public void autoHeal()
+    {
+        if(playerAttr.currentHP < playerAttr.maxHP / 2 && healTimer <= 0)
+        {
+            playerAttr.currentHP += healAmount;
+            healTimer = healDuration;
+        }
+        if (healTimer > 0) healTimer -= Time.deltaTime;
+    }
 }

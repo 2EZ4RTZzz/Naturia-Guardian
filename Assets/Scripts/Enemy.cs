@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     protected AudioSource deathAudio;
 
     //damage & health
-    public int health, damage;
+    public float health, damage;
 
     //hurt effect
     private SpriteRenderer sr;
@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
 
     //when the enemy TaketheDamage from the player method*****
     //受到伤害
-    public void TakeDamge(int damage)
+    public void TakeDamge(float damage)
     {
         //damage point.
         //局部变量

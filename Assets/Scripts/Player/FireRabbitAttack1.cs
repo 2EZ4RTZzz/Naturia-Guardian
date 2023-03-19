@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireRabbitAttack1 : MonoBehaviour
 {
-    public int damage;
+    public float damage;
     public float time,StartTime;
 
     private Animator anim;
@@ -13,12 +13,15 @@ public class FireRabbitAttack1 : MonoBehaviour
     //buff状态
     public BuffState_SO buffState;
     public bool fireBuff_1;
+    public PlayerAttributes playerAttr;
+    public SkillDataList_SO skillList;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         Attack1Coll = GetComponent<PolygonCollider2D>();
+        playerAttr = transform.parent.parent.GetComponent<PlayerAttributes>();
         fireBuff_1 = false;
     }
 
@@ -33,6 +36,14 @@ public class FireRabbitAttack1 : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.J))
         {
+            if (Random.Range(0,100) < playerAttr.crit)
+            {
+                damage = playerAttr.atk * (playerAttr.critDmg/100) * skillList.fireRabbitSkills[0].dmgFactor;
+            }
+            else
+            {
+                damage = playerAttr.atk * skillList.fireRabbitSkills[0].dmgFactor;
+            }
             anim.SetTrigger("attack_1");
             // Debug.Log("is hurt");
             StartCoroutine(StartAttack());

@@ -44,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     //public
-    public void DamagePlayer(int damage)
+    public void DamagePlayer(float damage)
     {
         //relate to the HP bar
         playerAttr.currentHP -= damage*(1-playerAttr.def/100.0f);

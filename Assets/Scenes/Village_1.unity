@@ -16462,6 +16462,8 @@ MonoBehaviour:
   StartTime: 0
   buffState: {fileID: 11400000, guid: 75541cc4949cd44ab88b64bc86e547e7, type: 2}
   fireBuff_1: 0
+  playerAttr: {fileID: 0}
+  skillList: {fileID: 0}
 --- !u!114 &1802520757 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3314267097138397483, guid: fa1fc49dd37c3724199882116ba719d2, type: 3}
@@ -24183,6 +24185,10 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
       value: -0.2869174
       objectReference: {fileID: 0}
+    - target: {fileID: 7469406884202071618, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
+      propertyPath: skillList
+      value: 
+      objectReference: {fileID: 11400000, guid: f8132e9f5f6e149e4bd0b22ecc02c5ec, type: 2}
     - target: {fileID: 7469406884566970298, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
       propertyPath: pageNoTxt
       value: 

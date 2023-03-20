@@ -16,12 +16,12 @@ MonoBehaviour:
   - skillName: J
     skillIcon: {fileID: 21300000, guid: 94711770c51ad5947adc99765863a77f, type: 3}
     cd: 0
-    mp: 0
+    mp: 5
     dmgFactor: 1
   - skillName: K
     skillIcon: {fileID: 21300000, guid: 56b2d645e391b5a408e904318f50dc24, type: 3}
     cd: 0
-    mp: 0
+    mp: 20
     dmgFactor: 1
   - skillName: L
     skillIcon: {fileID: 21300000, guid: 9e70fdab75ddf8f499fd1775d70e4076, type: 3}

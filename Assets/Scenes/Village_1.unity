@@ -16543,7 +16543,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800733771}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c399bd20be8f274ba126d67bbd436fb, type: 3}
   m_Name: 
@@ -16554,7 +16554,7 @@ MonoBehaviour:
   buffState: {fileID: 11400000, guid: 75541cc4949cd44ab88b64bc86e547e7, type: 2}
   fireBuff_1: 0
   playerAttr: {fileID: 0}
-  skillList: {fileID: 0}
+  skillList: {fileID: 11400000, guid: f8132e9f5f6e149e4bd0b22ecc02c5ec, type: 2}
 --- !u!114 &1802520757 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3314267097138397483, guid: fa1fc49dd37c3724199882116ba719d2, type: 3}
@@ -23357,6 +23357,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7271695779541051640, guid: 27173b2c673253a4da7eaf9921301688, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 7469406884909827305}
+    - target: {fileID: 7587443834881915767, guid: 27173b2c673253a4da7eaf9921301688, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 7469406884909827305}
     - target: {fileID: 7587443835379841170, guid: 27173b2c673253a4da7eaf9921301688, type: 3}
       propertyPath: m_Name
       value: Canvas-HP_Bar
@@ -23445,7 +23453,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7221703808133851152, guid: 27173b2c673253a4da7eaf9921301688, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 27173b2c673253a4da7eaf9921301688, type: 3}
 --- !u!1001 &477083469518272302
 PrefabInstance:
@@ -24303,6 +24312,14 @@ PrefabInstance:
     - target: {fileID: 7469406884202071617, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
       value: -0.2869174
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469406884202071618, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
+      propertyPath: sickle
+      value: 
+      objectReference: {fileID: 7601861627628237680, guid: 519d55e59f051924fad0e3e396f1244b, type: 3}
+    - target: {fileID: 7469406884202071618, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7469406884202071618, guid: bb29e88346b442b4096c6152ddcdc898, type: 3}
       propertyPath: skillList

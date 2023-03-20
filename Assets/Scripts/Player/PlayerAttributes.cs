@@ -33,6 +33,12 @@ public class PlayerAttributes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentHP > maxHP) currentHP = maxHP;
+        if (currentHP < 0) currentHP = 0;
+        if (currentMP > maxMP) currentMP = maxMP;
+        if (currentMP < 0) currentMP = 0;
+        if (crit > 90) crit = 90;
+
         for (int i=0; i<buffs.buffList.Count; i++)
         {
             InventoryItem buff = buffs.buffList[i];

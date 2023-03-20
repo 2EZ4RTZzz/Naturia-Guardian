@@ -15,13 +15,13 @@ public class SickleHit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            Shoot();
-        }
+        //if(Input.GetKeyDown(KeyCode.K))
+        //{
+        //    Shoot();
+        //}
     }
 
-    void Shoot()
+    public void Shoot()
     {
         Instantiate(sickle,transform.position,transform.rotation);
     }

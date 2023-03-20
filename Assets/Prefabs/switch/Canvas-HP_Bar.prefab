@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 7047670957746699298}
   - component: {fileID: 6295817395993138776}
   - component: {fileID: 3558727793672829744}
-  - component: {fileID: 7221703808133851152}
+  - component: {fileID: 7271695779541051640}
   m_Layer: 5
   m_Name: Mana
   m_TagString: Untagged
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7221703808133851152
+--- !u!114 &7271695779541051640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,10 +164,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4623408965487120140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 869a5d3f6f113af46a27a172c0ac3eed, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c402134a6c2f47f4a88794b4d99c1a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 1094952401767672805}
+  manaText: {fileID: 1094952401767672805}
   player: {fileID: 0}
 --- !u!1 &4939466009894409648
 GameObject:

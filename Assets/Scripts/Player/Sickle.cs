@@ -7,7 +7,7 @@ public class Sickle : MonoBehaviour
     //flying speed.
     public float speed;
     //damage 
-    public int damage;
+    public float damage;
     //rotate speed
     public float rotateSpeed;
 

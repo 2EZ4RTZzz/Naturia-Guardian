@@ -44,10 +44,23 @@ public class FireRabbitAttack1 : MonoBehaviour
             {
                 damage = playerAttr.atk * skillList.fireRabbitSkills[0].dmgFactor;
             }
+            playerAttr.currentMP += skillList.fireRabbitSkills[0].mp;
             anim.SetTrigger("attack_1");
             // Debug.Log("is hurt");
             StartCoroutine(StartAttack());
-            
+        }
+        if (Input.GetKeyDown(KeyCode.K) && playerAttr.currentMP >= skillList.fireRabbitSkills[1].mp)
+        {
+            this.transform.parent.GetChild(2).GetComponent<SickleHit>().Shoot();
+            playerAttr.currentMP -= skillList.fireRabbitSkills[1].mp;
+            if (Random.Range(0, 100) < playerAttr.crit)
+            {
+                this.transform.parent.GetChild(2).GetComponent<SickleHit>().sickle.GetComponent<Sickle>().damage = playerAttr.atk * (playerAttr.critDmg / 100) * skillList.fireRabbitSkills[1].dmgFactor;
+            }
+            else
+            {
+                this.transform.parent.GetChild(2).GetComponent<SickleHit>().sickle.GetComponent<Sickle>().damage = playerAttr.atk * skillList.fireRabbitSkills[1].dmgFactor;
+            }
         }
     }
 

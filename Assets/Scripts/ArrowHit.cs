@@ -6,9 +6,12 @@ public class ArrowHit : MonoBehaviour
 {
     public GameObject arrowPrefab;
     private Animator anim;
+    public PlayerAttributes playerAttr;
+    public SkillDataList_SO skillList;
     // Start is called before the first frame update
     void Start()
     {
+        playerAttr = transform.parent.parent.GetComponent<PlayerAttributes>();
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
@@ -24,9 +27,15 @@ public class ArrowHit : MonoBehaviour
         {
             anim.SetTrigger("attack_1");
             Shoot();
-            //Debug.Log("test123");
-            // anim.SetTrigger("attack_1");
-            // StartCoroutine(StartAttack());
+            if (Random.Range(0, 100) < playerAttr.crit)
+            {
+                arrowPrefab.GetComponent<Arrow>().damage = playerAttr.atk * (playerAttr.critDmg / 100) * skillList.iceRabbitSkills[0].dmgFactor;
+            }
+            else
+            {
+                arrowPrefab.GetComponent<Arrow>().damage = playerAttr.atk * skillList.iceRabbitSkills[0].dmgFactor;
+            }
+            playerAttr.currentMP += skillList.iceRabbitSkills[0].mp;
         }
     }
     void Shoot()

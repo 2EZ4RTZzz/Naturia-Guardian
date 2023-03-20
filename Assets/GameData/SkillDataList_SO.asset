@@ -32,8 +32,8 @@ MonoBehaviour:
   - skillName: SingleArrow
     skillIcon: {fileID: 1642083452, guid: 1384df3524e551f4eb15b84652378f9b, type: 3}
     cd: 0
-    mp: 0
-    dmgFactor: 0
+    mp: 5
+    dmgFactor: 1
   - skillName: SkyArrow
     skillIcon: {fileID: -1116456208, guid: 1384df3524e551f4eb15b84652378f9b, type: 3}
     cd: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     public float speed; //original speed
-    public int damage;
+    public float damage;
     public float destoryDistance; //fly x distance will destory itself
 
     private Rigidbody2D rb2d;

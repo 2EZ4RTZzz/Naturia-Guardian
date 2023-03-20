@@ -7188,6 +7188,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 5612778935792281358, guid: 927e1d8ee4ea055479b19b499081feef, type: 3}
+  playerAttr: {fileID: 0}
+  skillList: {fileID: 11400000, guid: f8132e9f5f6e149e4bd0b22ecc02c5ec, type: 2}
 --- !u!1 &445365616
 GameObject:
   m_ObjectHideFlags: 0

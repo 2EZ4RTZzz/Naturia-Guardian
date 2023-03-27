@@ -89,6 +89,7 @@ public class FireRabbitAttack1 : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy"))
         {
            other.GetComponent<Enemy>().TakeDamge(damage);
+            other.GetComponent<ElementalReaction>().fire++;
         }
 
         if (other.gameObject.CompareTag("MeltIce") && fireBuff_1)

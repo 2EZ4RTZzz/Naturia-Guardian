@@ -194,6 +194,42 @@ MonoBehaviour:
     canActivate: 1
     canUse: 0
   - itemID: 1015
+    name: ATK UP 2
+    itemType: 2
+    itemIcon: {fileID: -35044563, guid: 1384df3524e551f4eb15b84652378f9b, type: 3}
+    itemOnWorldSprite: {fileID: -35044563, guid: 1384df3524e551f4eb15b84652378f9b, type: 3}
+    itemDescription: Increase ATK based 10% max HP
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 1
+    canUse: 0
+  - itemID: 1016
+    name: CRIT UP 2
+    itemType: 2
+    itemIcon: {fileID: 1861578490, guid: 1384df3524e551f4eb15b84652378f9b, type: 3}
+    itemOnWorldSprite: {fileID: 1861578490, guid: 1384df3524e551f4eb15b84652378f9b, type: 3}
+    itemDescription: Increase CRIT based on 10% max SP
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 0
+    canUse: 1
+  - itemID: 1017
+    name: CRIT DMG UP
+    itemType: 2
+    itemIcon: {fileID: -1180576884, guid: 1384df3524e551f4eb15b84652378f9b, type: 3}
+    itemOnWorldSprite: {fileID: -1180576884, guid: 1384df3524e551f4eb15b84652378f9b, type: 3}
+    itemDescription: CRIT DMG UP 10%
+    itemUseRadius: 0
+    canPickUp: 0
+    canTrade: 0
+    canSynthesize: 0
+    canActivate: 0
+    canUse: 1
+  - itemID: 1018
     name: Heal UP
     itemType: 3
     itemIcon: {fileID: 674101538, guid: 6bc856fcd8b444e4f83e9df3016e3afb, type: 3}
@@ -205,7 +241,7 @@ MonoBehaviour:
     canSynthesize: 0
     canActivate: 1
     canUse: 0
-  - itemID: 1016
+  - itemID: 1019
     name: Speed UP
     itemType: 3
     itemIcon: {fileID: 1526588197, guid: 6bc856fcd8b444e4f83e9df3016e3afb, type: 3}

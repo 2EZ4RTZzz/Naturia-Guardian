@@ -39,6 +39,7 @@ public class Arrow : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.GetComponent<Enemy>().TakeDamge(damage);
+            other.GetComponent<ElementalReaction>().ice++;
         }
     }
 }

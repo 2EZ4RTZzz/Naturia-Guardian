@@ -56,6 +56,9 @@ namespace Shameless.Inventory
                         {
                             UnlockRecipe(1015);
                             UnlockRecipe(1016);
+                            UnlockRecipe(1017);
+                            UnlockRecipe(1018);
+                            UnlockRecipe(1019);
                         }
                         Destroy(item.gameObject);
                     }

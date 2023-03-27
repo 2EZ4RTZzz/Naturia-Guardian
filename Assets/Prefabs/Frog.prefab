@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 4586900973255902483}
   - component: {fileID: 4586900973255902482}
   - component: {fileID: 1299536648}
+  - component: {fileID: 4212361405725709914}
   m_Layer: 0
   m_Name: Frog
   m_TagString: Enemy
@@ -202,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069f5e0fec3501b4fa203e04abc597d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
+  health: 30
   damage: 1
   flashTime: 0.3
   bloodEffect: {fileID: 1441474821978125024, guid: cab9f2d1492c19d41b6c9c944343fdb2, type: 3}
@@ -331,3 +332,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4212361405725709914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4586900973255902493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d25a5dd16ac5499f8429f66c0fae4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fire: 0
+  ice: 0
+  damage: 15

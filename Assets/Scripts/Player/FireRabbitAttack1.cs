@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireRabbitAttack1 : MonoBehaviour
 {
     public float damage;
-    public float time,StartTime;
+    public float time, StartTime;
 
     private Animator anim;
     private PolygonCollider2D Attack1Coll;
@@ -34,18 +34,19 @@ public class FireRabbitAttack1 : MonoBehaviour
 
     void attack()
     {
-        if(Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J))
         {
-            Debug.Log("123123123");
-            if (Random.Range(0,100) < playerAttr.crit)
+            // Debug.Log("123123123");
+            if (Random.Range(0, 100) < playerAttr.crit)
             {
-                damage = playerAttr.atk * (playerAttr.critDmg/100) * skillList.fireRabbitSkills[0].dmgFactor;
+                damage = playerAttr.atk * (playerAttr.critDmg / 100) * skillList.fireRabbitSkills[0].dmgFactor;
             }
             else
             {
                 damage = playerAttr.atk * skillList.fireRabbitSkills[0].dmgFactor;
             }
-            playerAttr.currentMP += skillList.fireRabbitSkills[0].mp;
+
+            // playerAttr.currentMP += skillList.fireRabbitSkills[0].mp;
             anim.SetTrigger("attack_1");
             // Debug.Log("is hurt");
             StartCoroutine(StartAttack());
@@ -69,7 +70,7 @@ public class FireRabbitAttack1 : MonoBehaviour
     IEnumerator StartAttack()
     {
         // Debug.Log("is hurt");
-        Attack1Coll.enabled=true;
+        Attack1Coll.enabled = true;
         yield return new WaitForSeconds(StartTime);
         // Attack1Coll.enabled=true;
         StartCoroutine(disableHitBox());
@@ -80,16 +81,17 @@ public class FireRabbitAttack1 : MonoBehaviour
     IEnumerator disableHitBox()
     {
         yield return new WaitForSeconds(time);
-        Attack1Coll.enabled=false;
+        Attack1Coll.enabled = false;
     }
 
     //攻击
     void OnTriggerEnter2D(Collider2D other)
     {
         // Enemy enemy = other.gameObject.GetComponent<Enemy>();
-        if(other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
-           other.GetComponent<Enemy>().TakeDamge(damage);
+            other.GetComponent<Enemy>().TakeDamge(damage);
+            playerAttr.currentMP += skillList.fireRabbitSkills[0].mp;
             other.GetComponent<ElementalReaction>().fire++;
         }
 
@@ -106,7 +108,7 @@ public class FireRabbitAttack1 : MonoBehaviour
                 Debug.Log("destroy");
                 Destroy(other.gameObject);
             }
-            
+
         }
     }
 

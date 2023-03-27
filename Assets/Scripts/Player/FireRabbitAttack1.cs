@@ -36,6 +36,7 @@ public class FireRabbitAttack1 : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.J))
         {
+            Debug.Log("123123123");
             if (Random.Range(0,100) < playerAttr.crit)
             {
                 damage = playerAttr.atk * (playerAttr.critDmg/100) * skillList.fireRabbitSkills[0].dmgFactor;

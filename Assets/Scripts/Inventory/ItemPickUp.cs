@@ -52,6 +52,7 @@ namespace Shameless.Inventory
 
                     if (item.itemDetails.canUse)
                     {
+                        //Debug.Log("000");
                         if (item.itemID == 1020)
                         {
                             UnlockRecipe(1015);

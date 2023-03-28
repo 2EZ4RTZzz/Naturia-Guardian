@@ -643,17 +643,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4385721430538911431, guid: 7d53efea4815893458295d87bb1177bd, type: 3}
+      propertyPath: m_BoundingShape2D
+      value: 
+      objectReference: {fileID: 908516275}
     - target: {fileID: 4385721431271223824, guid: 7d53efea4815893458295d87bb1177bd, type: 3}
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4385721431271223824, guid: 7d53efea4815893458295d87bb1177bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -142997.84
+      value: 66.16176
       objectReference: {fileID: 0}
     - target: {fileID: 4385721431271223824, guid: 7d53efea4815893458295d87bb1177bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 94763.85
+      value: 38.646282
       objectReference: {fileID: 0}
     - target: {fileID: 4385721431271223824, guid: 7d53efea4815893458295d87bb1177bd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3305,6 +3309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 908516274}
   - component: {fileID: 908516273}
+  - component: {fileID: 908516275}
   m_Layer: 0
   m_Name: BACKGROUND
   m_TagString: Untagged
@@ -3379,6 +3384,35 @@ Transform:
   m_Father: {fileID: 541389849}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &908516275
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908516272}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 106.25, y: 15.5}
+    newSize: {x: 106.25, y: 15.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -53.125, y: 7.75}
+      - {x: -53.125, y: -7.75}
+      - {x: 53.125, y: -7.75}
+      - {x: 53.125, y: 7.75}
 --- !u!1 &917489167 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3028415771744075393, guid: a9dfbf4d32793d7428aec6e72088d915, type: 3}

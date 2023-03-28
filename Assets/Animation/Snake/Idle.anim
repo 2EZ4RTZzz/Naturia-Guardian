@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: frog_jump
+  m_Name: Idle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,12 +20,20 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 09dcf2e3e6efec2438084278db5f44a3, type: 3}
+      value: {fileID: -2122259418, guid: a27b5dc464ef6884f8834f274e2de60b, type: 3}
+    - time: 0.083333336
+      value: {fileID: 1663238689, guid: a27b5dc464ef6884f8834f274e2de60b, type: 3}
+    - time: 0.16666667
+      value: {fileID: -464070285, guid: a27b5dc464ef6884f8834f274e2de60b, type: 3}
+    - time: 0.25
+      value: {fileID: 1774029448, guid: a27b5dc464ef6884f8834f274e2de60b, type: 3}
+    - time: 0.33333334
+      value: {fileID: -1489741286, guid: a27b5dc464ef6884f8834f274e2de60b, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 10
+  m_SampleRate: 12
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -40,13 +48,17 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 09dcf2e3e6efec2438084278db5f44a3, type: 3}
+    - {fileID: -2122259418, guid: a27b5dc464ef6884f8834f274e2de60b, type: 3}
+    - {fileID: 1663238689, guid: a27b5dc464ef6884f8834f274e2de60b, type: 3}
+    - {fileID: -464070285, guid: a27b5dc464ef6884f8834f274e2de60b, type: 3}
+    - {fileID: 1774029448, guid: a27b5dc464ef6884f8834f274e2de60b, type: 3}
+    - {fileID: -1489741286, guid: a27b5dc464ef6884f8834f274e2de60b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.1
+    m_StopTime: 0.4166667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

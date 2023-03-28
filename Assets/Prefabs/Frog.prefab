@@ -215,7 +215,7 @@ MonoBehaviour:
   leftpoint: {fileID: 4586900971703102136}
   rightpoint: {fileID: 4586900972666107618}
   Speed: 3
-  jumpForce: 5
+  jumpForce: 3
 --- !u!95 &4586900973255902482
 Animator:
   serializedVersion: 5

@@ -13464,6 +13464,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6408662373646305640, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
   m_PrefabInstance: {fileID: 6408662372838868524}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1356894022 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4374657883955583667, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
+  m_PrefabInstance: {fileID: 6408662372838868524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356894020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b8fa48263a2441dafe675180f4f167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1365931590
 GameObject:
   m_ObjectHideFlags: 0
@@ -26337,6 +26348,10 @@ PrefabInstance:
       propertyPath: unlockRecipeDisplay
       value: 
       objectReference: {fileID: 1053417228}
+    - target: {fileID: 6408662372061906054, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
+      propertyPath: playerAttr
+      value: 
+      objectReference: {fileID: 1356894022}
     - target: {fileID: 6408662372510723454, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
       propertyPath: pageNoTxt
       value: 
@@ -26589,7 +26604,9 @@ PrefabInstance:
       propertyPath: craftingList2.Array.data[4]
       value: 
       objectReference: {fileID: 1963551289}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5082178796155000117, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
+    - {fileID: 8164313968885792473, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
 --- !u!1001 &7634813927885020376
 PrefabInstance:

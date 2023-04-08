@@ -21,13 +21,18 @@ public class FireRabbitAttack1 : MonoBehaviour
     {
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         Attack1Coll = GetComponent<PolygonCollider2D>();
-        playerAttr = transform.parent.parent.GetComponent<PlayerAttributes>();
+        //playerAttr = gameObject.transform.parent.parent.GetComponent<PlayerAttributes>();
+        if (playerAttr == null)
+        {
+            Debug.LogError("playerAttr is not initialized properly.");
+        }
         fireBuff_1 = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //playerAttr = transform.parent.parent.GetComponent<PlayerAttributes>();
         attack();
         checkBuffState();
     }
@@ -91,6 +96,10 @@ public class FireRabbitAttack1 : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             other.GetComponent<Enemy>().TakeDamge(damage);
+            if(playerAttr == null)
+            {
+                Debug.Log("null");
+            }
             playerAttr.currentMP += skillList.fireRabbitSkills[0].mp;
             other.GetComponent<ElementalReaction>().fire++;
         }

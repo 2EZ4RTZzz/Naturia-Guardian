@@ -2693,6 +2693,7 @@ MonoBehaviour:
   - {fileID: 5971954648200259594}
   - {fileID: 5971954648577984659}
   - {fileID: 5971954648801262297}
+  buffs: {fileID: 11400000, guid: 75541cc4949cd44ab88b64bc86e547e7, type: 2}
 --- !u!1 &3028415771564349071
 GameObject:
   m_ObjectHideFlags: 0

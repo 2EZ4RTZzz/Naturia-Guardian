@@ -16,6 +16,7 @@ namespace Shameless.Inventory
         [Header("Player Bbuff UI")]
         [SerializeField] private GameObject buffUI;
         [SerializeField] private BuffSlotUI[] playerBuffs;
+        [SerializeField] private BuffState_SO buffs;
 
         private void OnEnable()
         {
@@ -43,6 +44,8 @@ namespace Shameless.Inventory
             {
                 playerBuffs[i].slotIndex = i;
             }
+
+            OnUpdateBuffUI(InventoryLocation.Player,buffs.buffList);
         }
 
         private void Update()

@@ -19,6 +19,8 @@ public class PlayerAttributes : MonoBehaviour
     private float oriCrit, oriAtk, oriDef, oriHP, oriMP, oriCritDmg;
     private float addAtk1, addAtk2, addCrit1, addcrit2, addCritDmg1;
 
+    public SavePlayerAttr attr;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,21 @@ public class PlayerAttributes : MonoBehaviour
         addAtk2 = 0;
         addCrit1 = 0;
         addcrit2 = 0;
+        Debug.Log("new");
+        if (attr.pass)
+        {
+            Debug.Log("pass = true");
+            maxHP = attr.maxHP;
+            maxMP = attr.maxMP;
+            atk = attr.atk;
+            def = attr.def;
+            crit = attr.crit;
+            critDmg = attr.critDmg;
+            doge = attr.doge;
+            currentHP = attr.currentHP;
+            currentMP = attr.currentMP;
+            attr.pass = false;
+        }
     }
 
     // Update is called once per frame

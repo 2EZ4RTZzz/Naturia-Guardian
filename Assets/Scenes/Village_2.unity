@@ -203,6 +203,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3745459993334223966, guid: 1eea5d788e9d8f943af2eb8afdbeb430, type: 3}
   m_PrefabInstance: {fileID: 78154935}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &82297555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 82297557}
+  - component: {fileID: 82297556}
+  m_Layer: 0
+  m_Name: SwitchData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &82297556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82297555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141d9427a04cb43f0a0505abc173444a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attr: {fileID: 11400000, guid: fa24bbc1bb40c4532ab661bc02be82c0, type: 2}
+  player: {fileID: 268964308}
+--- !u!4 &82297557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82297555}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.358541, y: -1.5074316, z: -0.51764977}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &112175267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -921,6 +967,10 @@ PrefabInstance:
       propertyPath: playerAttr
       value: 
       objectReference: {fileID: 268964308}
+    - target: {fileID: 4374657883955583667, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
+      propertyPath: attr
+      value: 
+      objectReference: {fileID: 11400000, guid: fa24bbc1bb40c4532ab661bc02be82c0, type: 2}
     - target: {fileID: 4636392571365110498, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
       propertyPath: buffInfo
       value: 
@@ -1709,6 +1759,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1001196764176317434, guid: a1160314c23b01c4c90d1f4887735bf7, type: 3}
+      propertyPath: attr
+      value: 
+      objectReference: {fileID: 11400000, guid: fa24bbc1bb40c4532ab661bc02be82c0, type: 2}
     - target: {fileID: 1001196764176317436, guid: a1160314c23b01c4c90d1f4887735bf7, type: 3}
       propertyPath: m_Name
       value: Portal

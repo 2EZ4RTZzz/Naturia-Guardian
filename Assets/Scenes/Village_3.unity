@@ -924,6 +924,10 @@ PrefabInstance:
       propertyPath: playerAttr
       value: 
       objectReference: {fileID: 2055521969}
+    - target: {fileID: 4374657883955583667, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
+      propertyPath: attr
+      value: 
+      objectReference: {fileID: 11400000, guid: fa24bbc1bb40c4532ab661bc02be82c0, type: 2}
     - target: {fileID: 4636392571365110498, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
       propertyPath: buffInfo
       value: 

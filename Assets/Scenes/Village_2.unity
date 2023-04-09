@@ -993,6 +993,10 @@ PrefabInstance:
       propertyPath: unlockRecipeDisplay
       value: 
       objectReference: {fileID: 605552406}
+    - target: {fileID: 6408662372061906054, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
+      propertyPath: playerAttr
+      value: 
+      objectReference: {fileID: 268964308}
     - target: {fileID: 6408662372624645108, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -72.41

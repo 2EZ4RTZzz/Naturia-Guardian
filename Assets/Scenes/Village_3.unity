@@ -12487,6 +12487,10 @@ PrefabInstance:
       propertyPath: itemID
       value: 1010
       objectReference: {fileID: 0}
+    - target: {fileID: 3034411650503141875, guid: 7389bddf991b1bd4caabce59807f6d06, type: 3}
+      propertyPath: buffs
+      value: 
+      objectReference: {fileID: 11400000, guid: 75541cc4949cd44ab88b64bc86e547e7, type: 2}
     - target: {fileID: 3034411651717969248, guid: 7389bddf991b1bd4caabce59807f6d06, type: 3}
       propertyPath: m_Pivot.x
       value: 0

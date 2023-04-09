@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3745459993334223966}
   - component: {fileID: 5320674673620842515}
-  - component: {fileID: 714765437814801255}
   - component: {fileID: 986101314723574445}
+  - component: {fileID: 697377766772074304}
   m_Layer: 0
   m_Name: HP_Potion
   m_TagString: Untagged
@@ -86,7 +86,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &714765437814801255
+--- !u!114 &986101314723574445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5905343465142313878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a851ad2dab1e36d439544dbbab770bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpRecovery: 15
+  player: {fileID: 5260069617022465582, guid: 44abb9e33509f114488876252aabf508, type: 3}
+--- !u!61 &697377766772074304
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,17 +126,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6666667, y: 0.8333333}
   m_EdgeRadius: 0
---- !u!114 &986101314723574445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5905343465142313878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a851ad2dab1e36d439544dbbab770bf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hpRecovery: 15
-  player: {fileID: 5260069617022465582, guid: 44abb9e33509f114488876252aabf508, type: 3}

@@ -5,12 +5,11 @@ using UnityEngine;
 public class HP_potion : MonoBehaviour
 {
     public float hpRecovery;
-    public GameObject player;
-    private PlayerAttributes recovery;
+    //public GameObject player;
+    public PlayerAttributes recovery;
     // Start is called before the first frame update
     void Start()
     {
-        recovery=player.GetComponent<PlayerAttributes>();
     }
 
     // Update is called once per frame

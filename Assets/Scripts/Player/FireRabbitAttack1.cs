@@ -13,6 +13,8 @@ public class FireRabbitAttack1 : MonoBehaviour
     //buff状态
     public BuffState_SO buffState;
     public bool fireBuff_1;
+    public bool fireBuff_2;
+    public bool fireBuff_3;
     public PlayerAttributes playerAttr;
     public SkillDataList_SO skillList;
 
@@ -27,6 +29,8 @@ public class FireRabbitAttack1 : MonoBehaviour
             Debug.LogError("playerAttr is not initialized properly.");
         }
         fireBuff_1 = false;
+        fireBuff_2 = false;
+        fireBuff_3 = false;
     }
 
     // Update is called once per frame
@@ -58,16 +62,31 @@ public class FireRabbitAttack1 : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.K) && playerAttr.currentMP >= skillList.fireRabbitSkills[1].mp)
         {
-            this.transform.parent.GetChild(2).GetComponent<SickleHit>().Shoot();
             playerAttr.currentMP -= skillList.fireRabbitSkills[1].mp;
-            if (Random.Range(0, 100) < playerAttr.crit)
+            if (fireBuff_2)
             {
-                this.transform.parent.GetChild(2).GetComponent<SickleHit>().sickle.GetComponent<Sickle>().damage = playerAttr.atk * (playerAttr.critDmg / 100) * skillList.fireRabbitSkills[1].dmgFactor;
+                this.transform.parent.GetChild(2).GetComponent<SickleHit>().Shoot();
+
+                if (Random.Range(0, 100) < playerAttr.crit)
+                {
+                    this.transform.parent.GetChild(2).GetComponent<SickleHit>().sickle.GetComponent<Sickle>().damage = playerAttr.atk * (playerAttr.critDmg / 100) * skillList.fireRabbitSkills[1].dmgFactor;
+                }
+                else
+                {
+                    this.transform.parent.GetChild(2).GetComponent<SickleHit>().sickle.GetComponent<Sickle>().damage = playerAttr.atk * skillList.fireRabbitSkills[1].dmgFactor;
+                }
             }
-            else
+            
+        }
+
+        if (Input.GetKeyDown(KeyCode.L) && playerAttr.currentMP >= skillList.fireRabbitSkills[2].mp)
+        {
+            playerAttr.currentMP -= skillList.fireRabbitSkills[2].mp;
+            if (fireBuff_3)
             {
-                this.transform.parent.GetChild(2).GetComponent<SickleHit>().sickle.GetComponent<Sickle>().damage = playerAttr.atk * skillList.fireRabbitSkills[1].dmgFactor;
+                this.transform.parent.GetChild(3).GetComponent<ThrowBomb>().callBomb();
             }
+
         }
     }
 
@@ -127,6 +146,8 @@ public class FireRabbitAttack1 : MonoBehaviour
         {
             var id = buffState.buffList[i].itemID;
             if (id == 1000) fireBuff_1 = true;
+            if (id == 1021) fireBuff_2 = true;
+            if (id == 1022) fireBuff_3 = true;
         }
     }
 

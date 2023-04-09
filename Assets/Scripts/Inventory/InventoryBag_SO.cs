@@ -8,4 +8,5 @@ using UnityEngine;
 public class InventoryBag_SO : ScriptableObject
 {
     public List<InventoryItem> itemList;
+    public bool init = true;
 }

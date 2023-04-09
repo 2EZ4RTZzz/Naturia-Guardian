@@ -12,9 +12,15 @@ namespace Shameless.Inventory
         public InventoryBag_SO playerBag;
         public BuffState_SO buffState;
 
+
         private void Start()
         {
-            InitializeGameData();
+            if (playerBag.init)
+            {
+                InitializeGameData();
+                playerBag.init = false;
+            }
+
             EventHandler.CallUpdateInventoryUI(InventoryLocation.Player, playerBag.itemList);
         }
 

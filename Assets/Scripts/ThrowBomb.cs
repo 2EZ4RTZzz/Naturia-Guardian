@@ -14,10 +14,15 @@ public class ThrowBomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L))
+        
+    }
+
+    public void callBomb()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
         {
             // Instantiate(bomb,transform.position,Quaternion.Euler(0,-180,0));
-            Instantiate(bomb,transform.position,transform.rotation);
+            Instantiate(bomb, transform.position, transform.rotation);
         }
     }
 }

@@ -11,24 +11,27 @@ public class TreasureBox : MonoBehaviour
     private bool isOpened;
     private Animator anim;
 
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         isOpened = false;
+        canOpen = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L))
+        if(Input.GetKeyDown(KeyCode.H))
         {
-            if(!canOpen){
-            anim.SetTrigger("Opening");
-            isOpened = true;
-            Invoke("GenHP", delayTime);
-            }
+            if(canOpen && !isOpened){
+                anim.SetTrigger("Opening");
+                isOpened = true;
+                Invoke("GenHP", delayTime);
 
+            }
         }
     }
 
@@ -41,18 +44,17 @@ public class TreasureBox : MonoBehaviour
     //判断打开关闭
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") 
-            && other.GetType().ToString() == "UnityEngine.CapsuleCollider2D")
+        if (other.gameObject.CompareTag("Player"))
         {
             canOpen = true;
+            Debug.Log("hit");
         }
     }
 
     //EXIT
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player")
-            && other.GetType().ToString() == "UnityEngine.CapsuleCollider2D")
+        if (other.gameObject.CompareTag("Player"))
         {
             canOpen = false;
         }

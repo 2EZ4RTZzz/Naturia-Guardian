@@ -1122,11 +1122,11 @@ PrefabInstance:
       objectReference: {fileID: 268964308}
     - target: {fileID: 6408662372624645108, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.77
+      value: -72.09
       objectReference: {fileID: 0}
     - target: {fileID: 6408662372624645108, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.29
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 6408662373219697217, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
       propertyPath: pageNoTxt
@@ -1308,6 +1308,10 @@ PrefabInstance:
       propertyPath: craftingList2.Array.data[4]
       value: 
       objectReference: {fileID: 1582899850}
+    - target: {fileID: 7387287111229910810, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5082178796155000117, guid: 5964907090f810b47a4014f795b24fc3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5964907090f810b47a4014f795b24fc3, type: 3}

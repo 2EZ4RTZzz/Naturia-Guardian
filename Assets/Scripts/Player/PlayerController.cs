@@ -234,7 +234,7 @@ public void PlayEffect2(){
 
                 //Debug.Log("is hurt");
                 isHurt = false;
-                backSpeed = 5;
+                backSpeed = 3;
 
             }
 

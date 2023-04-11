@@ -22,7 +22,8 @@ public class ThrowBomb : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             // Instantiate(bomb,transform.position,Quaternion.Euler(0,-180,0));
-            Instantiate(bomb, transform.position, transform.rotation);
+          var go=  Instantiate(bomb, transform.position, transform.rotation);
+            go.GetComponent<Bomb>().dir = -(transform.parent.transform.position - this.transform.position).normalized;
         }
     }
 }

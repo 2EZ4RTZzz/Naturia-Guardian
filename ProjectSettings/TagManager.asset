@@ -12,6 +12,9 @@ TagManager:
   - BuffInfoPanel
   - CameraShake
   - Players
+  - watet
+  - Missile
+  - Obs
   layers:
   - Default
   - TransparentFX

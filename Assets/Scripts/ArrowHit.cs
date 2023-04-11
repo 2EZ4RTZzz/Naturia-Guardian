@@ -23,6 +23,7 @@ public class ArrowHit : MonoBehaviour
 
     void attack()
     {
+         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         if (Input.GetKeyDown(KeyCode.J))
         {
             anim.SetTrigger("attack_1");

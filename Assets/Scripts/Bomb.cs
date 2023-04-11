@@ -17,7 +17,7 @@ public class Bomb : MonoBehaviour
 
     //for the bomb range
     public GameObject explosionRange;
-
+    public Vector3 dir;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class Bomb : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         //a orignal speed like throw out behaviour
-        rb2d.velocity = transform.right * startSpeed.x + transform.up * startSpeed.y;
+        rb2d.velocity = dir * startSpeed.x + transform.up * startSpeed.y;
 
 
         Invoke("Explode", delayExplodeTime);

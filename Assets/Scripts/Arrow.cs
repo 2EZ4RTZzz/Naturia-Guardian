@@ -11,7 +11,7 @@ public class Arrow : MonoBehaviour
     private Rigidbody2D rb2d;
     private Vector3 startPos;
     private GameObject player;
-
+ public GameObject effect;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class Arrow : MonoBehaviour
         if (player.transform.localScale.x < 0) rb2d.velocity = transform.right * -speed;
         startPos = transform.position;
         transform.localScale = new Vector3(player.transform.localScale.x,1,1);
-
+   effect=Resources.Load("effect2") as GameObject;
     }
 
     // Update is called once per frame
@@ -38,6 +38,8 @@ public class Arrow : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+             var go= GameObject.Instantiate(effect,other.gameObject.transform.position,Quaternion.identity,null);
+           Destroy(go,1f) ;
             other.GetComponent<Enemy>().TakeDamge(damage);
             other.GetComponent<ElementalReaction>().ice++;
         }

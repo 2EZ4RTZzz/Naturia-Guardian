@@ -6,6 +6,7 @@ using Shameless.Inventory;
 //super class
 public class Enemy : MonoBehaviour
 {
+    public float speed;
     protected Animator anim;
     protected AudioSource deathAudio;
 
@@ -28,8 +29,8 @@ public class Enemy : MonoBehaviour
     private PlayerHealth playerHealth;
 
     //death boolean 
-    private bool isDeath=false;
-    private float countDown = 30;
+    protected bool isDeath=false;
+    private float countDown = 1.5f;
 
     public GameObject itemPrefab;
 
@@ -96,7 +97,7 @@ public class Enemy : MonoBehaviour
     }
 
     //can be used from other class cause is open public
-    public void JumpOn()
+    public virtual void JumpOn()
     {
         deathAudio.Play();
         anim.SetTrigger("death");
@@ -154,5 +155,19 @@ public class Enemy : MonoBehaviour
                 playerHealth.DamagePlayer(damage);
             }            
         }
+    }
+
+    public void StopMove() {
+
+        StartCoroutine(IEnStopMove());
+    }
+
+
+    private float orginSpeed;
+    public IEnumerator IEnStopMove() {
+        orginSpeed = speed;
+        speed = 0;
+        yield return new WaitForSeconds(2f);
+        speed = orginSpeed;
     }
 }

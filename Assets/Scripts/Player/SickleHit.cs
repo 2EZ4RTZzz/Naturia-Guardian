@@ -23,6 +23,7 @@ public class SickleHit : MonoBehaviour
 
     public void Shoot()
     {
-        Instantiate(sickle,transform.position,transform.rotation);
+      var go=  Instantiate(sickle,transform.position,transform.rotation);
+        go.GetComponent<Sickle>().dir = -(transform.parent.transform.position - this.transform.position).normalized;
     }
 }

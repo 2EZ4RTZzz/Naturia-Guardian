@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySnake : Enemy
 {
-    public float speed;
+
     public float waitTime;
     public Transform[] moveSpots;
 

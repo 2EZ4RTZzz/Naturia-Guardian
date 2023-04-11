@@ -83,6 +83,7 @@ namespace Shameless.Inventory
                 {
                     if (item.itemDetails.canActivate)
                     {
+                        //DestroyImmediate(buffInfo.gameObject);
                         buffInfo.SetActive(false); 
                     }
                 }

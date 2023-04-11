@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBat : Enemy
 {
-    public float speed;
+  
     public float startWaitTime;
     private float waitTime;
 
@@ -33,6 +33,8 @@ public class EnemyBat : Enemy
             if(waitTime <= 0)
             {
                 movePos.position = GetRandomPos();
+               SpwanBullet();
+            
                 waitTime = startWaitTime;
             }
             else
@@ -48,4 +50,10 @@ public class EnemyBat : Enemy
         return rndPos;
     }
 
+public GameObject bullet;
+    public void SpwanBullet(){
+
+   var go= GameObject.Instantiate(bullet,transform.position,Quaternion.Euler(new Vector3(0,0,-90f)),null);
+ Destroy(go,2f);
+    }
 }

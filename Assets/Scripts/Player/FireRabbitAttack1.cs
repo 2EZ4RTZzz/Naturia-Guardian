@@ -31,6 +31,8 @@ public class FireRabbitAttack1 : MonoBehaviour
         fireBuff_1 = false;
         fireBuff_2 = false;
         fireBuff_3 = false;
+
+        effect=Resources.Load("effect1") as GameObject;
     }
 
     // Update is called once per frame
@@ -41,6 +43,7 @@ public class FireRabbitAttack1 : MonoBehaviour
         checkBuffState();
     }
 
+  public GameObject effect;
     void attack()
     {
         if (Input.GetKeyDown(KeyCode.J))
@@ -118,10 +121,13 @@ public class FireRabbitAttack1 : MonoBehaviour
         // Enemy enemy = other.gameObject.GetComponent<Enemy>();
         if (other.gameObject.CompareTag("Enemy"))
         {
+           var go= GameObject.Instantiate(effect,other.gameObject.transform.position,Quaternion.identity,null);
+           Destroy(go,1f) ;
             other.GetComponent<Enemy>().TakeDamge(damage);
             if(playerAttr == null)
             {
                 Debug.Log("null");
+                return;
             }
             playerAttr.currentMP += skillList.fireRabbitSkills[0].mp;
             other.GetComponent<ElementalReaction>().fire++;

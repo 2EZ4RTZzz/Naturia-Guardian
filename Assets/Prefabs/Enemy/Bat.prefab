@@ -138,6 +138,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &24121029254044429
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -176,17 +177,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7792a52c202564545ad81e262f5bd8f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
   health: 25
   damage: 15
   flashTime: 0.8
   bloodEffect: {fileID: 1441474821978125024, guid: cab9f2d1492c19d41b6c9c944343fdb2, type: 3}
   floatPoint: {fileID: 5915434104370894641, guid: 6dbc291268f2a1a4288b6480d12cb75a, type: 3}
   itemPrefab: {fileID: 4928596094817364230, guid: b978fca423e0ea348b677d19c5cf5605, type: 3}
-  speed: 10
   startWaitTime: 0.5
   movePos: {fileID: 4166327352384078948}
   leftDownPos: {fileID: 4226889868592772990}
   rightUpPos: {fileID: 2092928602563284541}
+  bullet: {fileID: 6489060743381730936, guid: 9f790b44b9fe6e34ba2232da5aa7ec75, type: 3}
 --- !u!1 &3049422279041518236
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +243,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5157573477890146625}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 50.4, y: -1.8899956, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

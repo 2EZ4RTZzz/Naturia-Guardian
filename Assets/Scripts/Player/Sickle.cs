@@ -20,11 +20,12 @@ public class Sickle : MonoBehaviour
     private Vector2 startSpeed;
     private CameraShake camShake;
 
+    public Vector2 dir;
     // Start is called before the first frame update
     void Start()
     {
         rb2d=GetComponent<Rigidbody2D>();
-        rb2d.velocity = transform.right * speed;
+        rb2d.velocity = dir * speed;
         startSpeed = rb2d.velocity; 
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         sickleTransform = GetComponent<Transform>();

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+
     private Rigidbody2D rb;
     private Animator anim;
     //玩家的碰撞方框（可以是胶囊也可以是正方形）
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour
     public int Cherry = 0;
 
     //后退速度
-    public float backSpeed=3;
+    public float backSpeed = 3;
 
     //jump sound
     public AudioSource jumpAudio;
@@ -39,15 +40,22 @@ public class PlayerController : MonoBehaviour
     public AudioSource pickUpAudio;
 
 
-    public float Attack1finish=90;
+    public float Attack1finish = 90;
     [SerializeField] private GameObject buffInfo;
 
-    
+
+
+
+    public PlayerAttributes playerAttr;
+    public SkillDataList_SO skillList;
+
+public GameObject[] effects;
+
 
     //check the last 帧
     // private Animation animationComponent;
     // private AnimationClip animClip;
-    
+
 
     void Start()
     {
@@ -68,8 +76,11 @@ public class PlayerController : MonoBehaviour
 
         if (isCrafting)
         {
-            rb.velocity = new Vector2(0,0);
+            rb.velocity = new Vector2(0, 0);
         }
+
+
+
         SwitchAnim();
         attack_2();
         attack_3();
@@ -122,18 +133,69 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             anim.SetBool("attack_2", true);
+
+            if (gameObject.name != "FireRabbit"&& playerAttr.currentMP >skillList.fireRabbitSkills[1].mp)
+            {
+                   playerAttr.currentMP -= skillList.fireRabbitSkills[1].mp;
+                var coll = Physics2D.CircleCastAll(transform.position, 1f, transform.right.normalized * 2f);
+                for (var i = 0; i < coll.Length; i++)
+                {
+
+                    //水
+                    if (coll[i].collider.tag == "watet")
+                    {
+
+                        coll[i].collider.transform.GetChild(0).gameObject.SetActive(true);
+                        coll[i].collider.transform.GetComponent<BoxCollider2D>().enabled = false;
+                        coll[i].collider.transform.GetComponent<SpriteRenderer>().enabled = false;
+                        effects[0].SetActive(false);
+                         effects[0].SetActive(true);
+
+                    }
+
+                    if (coll[i].collider.tag == "Enemy")
+                    {
+                        coll[i].collider.GetComponent<Enemy>().TakeDamge(5f);
+                        coll[i].collider.GetComponent<Enemy>().speed *= 0.5f;
+                          effects[0].SetActive(false);
+                         effects[0].SetActive(true);
+                    }
+                }
+            }
         }
     }
 
     void attack_3()
     {
-        if(Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L))
         {
-            anim.SetBool("attack_3",true);
+            anim.SetBool("attack_3", true);
+  playerAttr.currentMP -= skillList.fireRabbitSkills[1].mp;
             // rb.velocity = new Vector2(horizontalmove * 0, 0);          
+            if (gameObject.name != "FireRabbit"&& playerAttr.currentMP >skillList.fireRabbitSkills[1].mp)
+            {
+                Invoke("PlayEffect2",0.5f);
+                var coll = Physics2D.CircleCastAll(transform.position, 3f, Vector2.zero);
+                for (var i = 0; i < coll.Length; i++)
+                {
+
+                    if (coll[i].collider.tag == "Enemy")
+                    {
+                        coll[i].collider.GetComponent<Enemy>().TakeDamge(10f);
+                        coll[i].collider.GetComponent<Enemy>().StopMove();
+                    }
+                }
+            }
         }
     }
 
+
+public void PlayEffect2(){
+
+  effects[1].SetActive(false);
+                         effects[1].SetActive(true);
+
+}
 
     //切换动画
     void SwitchAnim()
@@ -142,9 +204,9 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("idle", false);
 
         //if the player is falling down and also not touching the ground , then is falling animtion
-        if(rb.velocity.y < 0.1f && !coll.IsTouchingLayers(ground))
+        if (rb.velocity.y < 0.1f && !coll.IsTouchingLayers(ground))
         {
-            anim.SetBool("falling",true);
+            anim.SetBool("falling", true);
         }
         //直接返回一个boolean 因为我设置的boolean variable!!!
         if (anim.GetBool("jumping"))
@@ -160,14 +222,14 @@ public class PlayerController : MonoBehaviour
         {
             //decrease the hurt backSpeed
             backSpeed -= 0.05f;
-            anim.SetBool("hurt",true);
-            
+            anim.SetBool("hurt", true);
+
             if (backSpeed <= 0)
             {
                 //after hurt animtor back to idle
                 //回到正常状态
-                anim.SetBool("hurt",false);
-                anim.SetBool("idle",true);
+                anim.SetBool("hurt", false);
+                anim.SetBool("idle", true);
 
 
                 //Debug.Log("is hurt");
@@ -185,7 +247,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+
 
     //吃cherry！ 收集method
     private void OnTriggerEnter2D(Collider2D collision)
@@ -233,7 +295,7 @@ public class PlayerController : MonoBehaviour
     {
         //match the tag
         if (other.gameObject.tag == "Enemy")
-        {   
+        {
             //get all the enemy_frog's functions / variables 
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
             // Enemy_Frog frog = other.gameObject.GetComponent<Enemy_Frog>();

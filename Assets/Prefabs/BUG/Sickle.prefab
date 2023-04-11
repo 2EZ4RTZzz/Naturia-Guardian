@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
-  damage: 1
+  damage: 11.25
   rotateSpeed: 20
   tuning: 0.5
+  dir: {x: 0, y: 0}

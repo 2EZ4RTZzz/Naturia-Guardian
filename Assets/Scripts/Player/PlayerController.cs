@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     public PlayerAttributes playerAttr;
     public SkillDataList_SO skillList;
 
-public GameObject[] effects;
+    public GameObject[] effects;
 
 
     //check the last 帧
@@ -59,6 +59,7 @@ public GameObject[] effects;
 
     void Start()
     {
+        Time.timeScale=1;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         isCrouching = false;
@@ -134,9 +135,9 @@ public GameObject[] effects;
         {
             anim.SetBool("attack_2", true);
 
-            if (gameObject.name != "FireRabbit"&& playerAttr.currentMP >skillList.fireRabbitSkills[1].mp)
+            if (gameObject.name != "FireRabbit" && playerAttr.currentMP > skillList.fireRabbitSkills[1].mp)
             {
-                   playerAttr.currentMP -= skillList.fireRabbitSkills[1].mp;
+                playerAttr.currentMP -= skillList.fireRabbitSkills[1].mp;
                 var coll = Physics2D.CircleCastAll(transform.position, 1f, transform.right.normalized * 2f);
                 for (var i = 0; i < coll.Length; i++)
                 {
@@ -149,7 +150,7 @@ public GameObject[] effects;
                         coll[i].collider.transform.GetComponent<BoxCollider2D>().enabled = false;
                         coll[i].collider.transform.GetComponent<SpriteRenderer>().enabled = false;
                         effects[0].SetActive(false);
-                         effects[0].SetActive(true);
+                        effects[0].SetActive(true);
 
                     }
 
@@ -157,8 +158,8 @@ public GameObject[] effects;
                     {
                         coll[i].collider.GetComponent<Enemy>().TakeDamge(5f);
                         coll[i].collider.GetComponent<Enemy>().speed *= 0.5f;
-                          effects[0].SetActive(false);
-                         effects[0].SetActive(true);
+                        effects[0].SetActive(false);
+                        effects[0].SetActive(true);
                     }
                 }
             }
@@ -170,11 +171,11 @@ public GameObject[] effects;
         if (Input.GetKeyDown(KeyCode.L))
         {
             anim.SetBool("attack_3", true);
-  playerAttr.currentMP -= skillList.fireRabbitSkills[1].mp;
+            playerAttr.currentMP -= skillList.fireRabbitSkills[1].mp;
             // rb.velocity = new Vector2(horizontalmove * 0, 0);          
-            if (gameObject.name != "FireRabbit"&& playerAttr.currentMP >skillList.fireRabbitSkills[1].mp)
+            if (gameObject.name != "FireRabbit" && playerAttr.currentMP > skillList.fireRabbitSkills[1].mp)
             {
-                Invoke("PlayEffect2",0.5f);
+                Invoke("PlayEffect2", 0.5f);
                 var coll = Physics2D.CircleCastAll(transform.position, 3f, Vector2.zero);
                 for (var i = 0; i < coll.Length; i++)
                 {
@@ -190,12 +191,13 @@ public GameObject[] effects;
     }
 
 
-public void PlayEffect2(){
+    public void PlayEffect2()
+    {
 
-  effects[1].SetActive(false);
-                         effects[1].SetActive(true);
+        effects[1].SetActive(false);
+        effects[1].SetActive(true);
 
-}
+    }
 
     //切换动画
     void SwitchAnim()

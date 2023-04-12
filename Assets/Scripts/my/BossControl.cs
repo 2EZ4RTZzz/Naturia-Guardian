@@ -54,9 +54,9 @@ public class BossControl : Enemy
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
- public override void JumpOn()
+    public override void JumpOn()
     {
-      
+
     }
 
     public void ChangePhas(int value)
@@ -66,15 +66,17 @@ public class BossControl : Enemy
             return;
 
         currentPhase = value;
-        transform.localScale*=1.2f;
+        transform.localScale *= 1.2f;
         speed = movementSpeed[currentPhase];
         animator.SetInteger("Index", value);
 
     }
 
-     private void OnDestroy() {
-          var go = GameObject.Instantiate(deathEffectPrefab, transform.position, Quaternion.identity, null);
-        
+    private void OnDestroy()
+    {
+        if(currentState == BossState.Death){
+            var go = GameObject.Instantiate(deathEffectPrefab, transform.position, Quaternion.identity, null);
+        }
     }
     // Update is called once per frame
     void Update()
@@ -85,8 +87,6 @@ public class BossControl : Enemy
         if (isDeath && currentState != BossState.Death)
         {
             currentState = BossState.Death;
-          
-          
             Destroy(this.gameObject, 2f);
             return;
 
@@ -125,7 +125,7 @@ public class BossControl : Enemy
             case BossState.Idle:
 
                 currentState = BossState.Moving;
-               
+
 
                 break;
             case BossState.Moving:
@@ -159,7 +159,7 @@ public class BossControl : Enemy
 
     private void Move()
     {
-         animator.SetBool("Walk", true);
+        animator.SetBool("Walk", true);
         transform.Translate(moveDirection * speed * Time.deltaTime);
     }
 
@@ -186,11 +186,12 @@ public class BossControl : Enemy
         //�ȴ�������Ч������ϣ�������˺�
         yield return new WaitForSeconds(0.5f);
 
-        if(player!=null){
-        player.GetComponentInParent<PlayerAttributes>().currentHP -= damage;
+        if (player != null)
+        {
+            player.GetComponentInParent<PlayerAttributes>().currentHP -= damage;
 
-        var go = GameObject.Instantiate(attackEffectPrefab, player.transform.position, Quaternion.identity, null);
-        Destroy(go, 1f);
+            var go = GameObject.Instantiate(attackEffectPrefab, player.transform.position, Quaternion.identity, null);
+            Destroy(go, 1f);
         }
         yield return new WaitForSeconds(interval);
         currentState = BossState.Idle;
